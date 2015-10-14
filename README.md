@@ -10,9 +10,7 @@ All files which describe our sports club system.
 
 The command to turn the three files into a pdf:
 
-    wkhtmltopdf Beschreibung.html Klassendiagramm.html RelationalesModell.html Testat1.pdf
-    
-Some more styling is necessary, so WIP.
+    wkhtmltopdf --footer-center "Testat 1 - Dbs1 - Seraina Tschuor & Lukas Schneider" --footer-left "[page]/[toPage]" --footer-right "[date]" --header-center "Sportliga - Testat 1" --header-center "Sportliga - Testat 1 - Datenbanksysteme" --disable-smart-shrinking  Beschreibung.html Klassendiagramm.html RelationalesModell.html Testat1.pdf
 
 This is meant for Datenbanksysteme 1 - HS15 at Hochschule Rapperswil  
 Authors: Seraina Tschuor & Lukas Schneider
