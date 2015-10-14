@@ -75,10 +75,9 @@ h3 {
     Nachname TEXT NOT NULL, <br>
     Lieblingsverein REFERENCES Clubs (Name))</p>
 <hr>
-<p>Begegnungen (<pk>BegegId</pk> INT, <br>
+<p>Begegnungen (<pk>Heim</pk> REFERENCES Clubs (Name), <br>
+    <pk>Gast</pk> REFERENCES Clubs (Name), <br>
     Austragungsort NOT NULL REFERENCES Clubs (Stadion), <br>
-    Heim NOT NULL REFERENCES Clubs (Name), <br>
-    Gast NOT NULL REFERENCES Clubs (Name), <br>
     ToreHeim INT NOT NULL, <br>
     ToreGast INT NOT NULL, <br>
     Besucherzahl INT NOT NULL)</p>
