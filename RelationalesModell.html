@@ -8,7 +8,7 @@
 <style>
 body {
 	font-family: Courier New, Courier, monospace;
-	font-size: 140%;
+	font-size: 120%;
 	width: 48rem;
 	padding-right: auto;
     padding-top: 3rem;
@@ -43,6 +43,14 @@ h3 {
     Stadion TEXT NOT NULL, <br>
     Budget DOUBLE NOT NULL, <br>
     Gründungsjahr DATE NOT NULL)</p>
+<hr>
+<p>Angestellte (<pk>AngId</pk> INT, <br>
+    Vorname TEXT NOT NULL, <br>
+    Nachname TEXT NOT NULL, <br>
+    Club NOT NULL REFERENCES Clubs, <br>
+    Gehalt DOUBLE NOT NULL, <br>
+    Vertragsbeginn DATE NOT NULL, <br>
+    Vertragsende DATE NOT NULL, <br>
 <hr>
 <p>Spieler (<pk>SpielerId</pk> INT, <br>
     Vorname TEXT NOT NULL, <br>
