@@ -66,12 +66,10 @@ h3 {
     Gehalt DOUBLE NOT NULL) </p>
 <hr>
 <p>Spieler (<fk><pk>AngId</pk><fk> REFERENCES Angestellte, <br>
-    <fk>Club</fk> NOT NULL REFERENCES Clubs(ClubId), <br>
     Nummer INT NOT NULL, <br>
     Position TEXT NOT NULL)</p>
 <hr>
 <p>Trainer (<fk><pk>AngId</pk></fk> REFERENCES Angestellte, <br>
-    <fk>Club</fk> NOT NULL REFERENCES Clubs(ClubId), <br>
     Bereich TEXT NOT NULL)</p>
 <hr>
 <p>Transfertabelle (<fk><pk>Käufer</pk></fk> REFERENCES Clubs(ClubId), <br>
