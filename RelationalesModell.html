@@ -79,6 +79,11 @@ h3 {
     Nachname TEXT NOT NULL, <br>
     <fk>Lieblingsverein</fk> REFERENCES Clubs(ClubId))</p>
 <hr>
+<p>Ligen (<pk>LigaId</pk> INT, <br>
+    Name TEXT NOT NULL, <br>
+    Rangliste ENUM NOT NULL, <br>
+    Preisgeld DOUBLE NOT NULL)</p>
+<hr>
 <p>Begegnungen (<fk><pk>Heim</pk></fk> REFERENCES Clubs(ClubId), <br>
     <fk><pk>Gast</pk></fk> REFERENCES Clubs(ClubId), <br>
     <pk>Spieldatum</pk> DATE NOT NULL, <br>
@@ -86,11 +91,6 @@ h3 {
     ToreHeim INT NOT NULL, <br>
     ToreGast INT NOT NULL, <br>
     Besucherzahl INT NOT NULL)</p>
-<hr>
-<p>Ligen (<pk>LigaId</pk> INT, <br>
-    Name TEXT NOT NULL, <br>
-    Rangliste ENUM NOT NULL, <br>
-    Preisgeld DOUBLE NOT NULL)</p>
 <hr>
 <p>Transfertabelle (<fk><pk>Käufer</pk></fk> REFERENCES Clubs(ClubId), <br>
     <fk><pk>Verkäufer</pk></fk> REFERENCES Clubs(ClubId), <br>
