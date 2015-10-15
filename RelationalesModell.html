@@ -50,7 +50,7 @@ h3 {
 <p>Angestellte (<pk>AngId</pk> INT, <br>
     Vorname TEXT NOT NULL, <br>
     Nachname TEXT NOT NULL, <br>
-    <fk>Club</fk> NOT NULL REFERENCES Clubs(Name), <br>
+    <fk>Club</fk> NOT NULL REFERENCES Clubs(ClubId), <br>
     Vertragsbeginn DATE NOT NULL, <br>
     Vertragsende DATE NOT NULL, <br>
     Gehalt DOUBLE NOT NULL) </p>
@@ -58,7 +58,7 @@ h3 {
 <p>Spieler (<pk>SpielerId</pk> INT, <br>
     Vorname TEXT NOT NULL, <br>
     Nachname TEXT NOT NULL, <br>
-    <fk>Club</fk> NOT NULL REFERENCES Clubs(Name), <br>
+    <fk>Club</fk> NOT NULL REFERENCES Clubs(ClubId), <br>
     Vertragsbeginn DATE NOT NULL, <br>
     Vertragsende DATE NOT NULL, <br>
     Gehalt DOUBLE NOT NULL, <br>
@@ -68,7 +68,7 @@ h3 {
 <p>Trainer (<pk>TrainerId</pk> INT, <br>
     Vorname TEXT NOT NULL, <br>
     Nachname TEXT NOT NULL, <br>
-    <fk>Club</fk> NOT NULL REFERENCES Clubs(Name), <br>
+    <fk>Club</fk> NOT NULL REFERENCES Clubs(ClubId), <br>
     Vertragsbeginn DATE NOT NULL, <br>
     Vertragsende DATE NOT NULL, <br>
     Gehalt DOUBLE NOT NULL, <br>
@@ -77,10 +77,10 @@ h3 {
 <p>Zuschauer (<pk>ZuschId</pk> INT, <br>
     Vorname TEXT NOT NULL, <br>
     Nachname TEXT NOT NULL, <br>
-    <fk>Lieblingsverein</fk> REFERENCES Clubs(Name))</p>
+    <fk>Lieblingsverein</fk> REFERENCES Clubs(ClubId))</p>
 <hr>
-<p>Begegnungen (<fk><pk>Heim</pk></fk> REFERENCES Clubs(Name), <br>
-    <fk><pk>Gast</pk></fk> REFERENCES Clubs(Name), <br>
+<p>Begegnungen (<fk><pk>Heim</pk></fk> REFERENCES Clubs(ClubId), <br>
+    <fk><pk>Gast</pk></fk> REFERENCES Clubs(ClubId), <br>
     <pk>Spieldatum</pk> DATE NOT NULL, <br>
     <fk>Austragungsort</fk> NOT NULL REFERENCES Clubs(Stadion), <br>
     ToreHeim INT NOT NULL, <br>
@@ -91,6 +91,11 @@ h3 {
     Name TEXT NOT NULL, <br>
     Rangliste ENUM NOT NULL, <br>
     Preisgeld DOUBLE NOT NULL)</p>
+<hr>
+<p>Transfertabelle (<fk><pk>Käufer</pk></fk> REFERENCES Clubs(ClubId), <br>
+    <fk><pk>Verkäufer</pk></fk> REFERENCES Clubs(ClubId), <br>
+    <fk><pk>Spieler</pk></fk> REFERENCES Spieler(SpielerId), <br>
+    Ablösesumme DOUBLE NOT NULL)</p>
 <hr>
 </body>
 </html>
