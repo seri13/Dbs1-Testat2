@@ -48,6 +48,11 @@ h3 {
     Budget DOUBLE NOT NULL, <br>
     Gründungsjahr DATE NOT NULL)</p>
 <hr>
+<p>Ligen (<pk>LigaId</pk> INT, <br>
+    Name TEXT NOT NULL, <br>
+    Rangliste ENUM NOT NULL, <br>
+    Preisgeld DOUBLE NOT NULL)</p>
+<hr>
 <p>Angestellte (<pk>AngId</pk> INT, <br>
     Vorname TEXT NOT NULL, <br>
     Nachname TEXT NOT NULL, <br>
@@ -65,15 +70,10 @@ h3 {
     <fk>Club</fk> NOT NULL REFERENCES Clubs(ClubId), <br>
     Bereich TEXT NOT NULL)</p>
 <hr>
-<p>Zuschauer (<pk>ZuschauerId</pk> INT, <br>
-    Vorname TEXT NOT NULL, <br>
-    Nachname TEXT NOT NULL, <br>
-    <fk>Lieblingsverein</fk> REFERENCES Clubs(ClubId))</p>
-<hr>
-<p>Ligen (<pk>LigaId</pk> INT, <br>
-    Name TEXT NOT NULL, <br>
-    Rangliste ENUM NOT NULL, <br>
-    Preisgeld DOUBLE NOT NULL)</p>
+<p>Transfertabelle (<fk><pk>Käufer</pk></fk> REFERENCES Clubs(ClubId), <br>
+    <fk><pk>Verkäufer</pk></fk> REFERENCES Clubs(ClubId), <br>
+    <fk><pk>Spieler</pk></fk> REFERENCES Spieler(SpielerId), <br>
+    Ablösesumme DOUBLE NOT NULL)</p>
 <hr>
 <p>Begegnungen (<fk><pk>Heim</pk></fk> REFERENCES Clubs(ClubId), <br>
     <fk><pk>Gast</pk></fk> REFERENCES Clubs(ClubId), <br>
@@ -83,10 +83,10 @@ h3 {
     ToreGast INT NOT NULL, <br>
     Besucherzahl INT NOT NULL)</p>
 <hr>
-<p>Transfertabelle (<fk><pk>Käufer</pk></fk> REFERENCES Clubs(ClubId), <br>
-    <fk><pk>Verkäufer</pk></fk> REFERENCES Clubs(ClubId), <br>
-    <fk><pk>Spieler</pk></fk> REFERENCES Spieler(SpielerId), <br>
-    Ablösesumme DOUBLE NOT NULL)</p>
+<p>Zuschauer (<pk>ZuschauerId</pk> INT, <br>
+    Vorname TEXT NOT NULL, <br>
+    Nachname TEXT NOT NULL, <br>
+    <fk>Lieblingsverein</fk> REFERENCES Clubs(ClubId))</p>
 <hr>
 </body>
 </html>
