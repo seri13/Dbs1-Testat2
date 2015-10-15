@@ -17,6 +17,9 @@ body {
 pk {
 	text-decoration: underline;
 }
+fk {
+    font-style: italic; 
+}
 
 p {
 	text-indent: -1.5rem;
@@ -37,53 +40,54 @@ h3 {
 </head>
 <body>
 <hr>
-<p>Clubs (<pk>ClubId</pk> INT PK, <br>
+<p>Clubs (<pk>ClubId</pk> INT, <br>
     Name TEXT NOT NULL, <br>
     Stadt TEXT NOT NULL, <br>
     Stadion TEXT NOT NULL, <br>
     Budget DOUBLE NOT NULL, <br>
     Gründungsjahr DATE NOT NULL)</p>
 <hr>
-<p>Angestellte (<pk>AngId</pk> INT PK, <br>
+<p>Angestellte (<pk>AngId</pk> INT, <br>
     Vorname TEXT NOT NULL, <br>
     Nachname TEXT NOT NULL, <br>
-    Club NOT NULL REFERENCES Clubs, <br>
+    <fk>Club</fk> NOT NULL REFERENCES Clubs(Name), <br>
+    Gehalt DOUBLE NOT NULL, <br>
+    Vertragsbeginn DATE NOT NULL, <br>
+    Vertragsende DATE NOT NULL) </p>
+<hr>
+<p>Spieler (<pk>SpielerId</pk> INT, <br>
+    Vorname TEXT NOT NULL, <br>
+    Nachname TEXT NOT NULL, <br>
+    <fk>Club</fk> NOT NULL REFERENCES Clubs(Name), <br>
     Gehalt DOUBLE NOT NULL, <br>
     Vertragsbeginn DATE NOT NULL, <br>
     Vertragsende DATE NOT NULL, <br>
+    Nummer INT NOT NULL, <br>
+    Position TEXT NOT NULL)</p>
 <hr>
-<p>Spieler (<pk>SpielerId</pk> INT PK, <br>
+<p>Trainer (<pk>TrainerId</pk> INT, <br>
     Vorname TEXT NOT NULL, <br>
     Nachname TEXT NOT NULL, <br>
-    Club NOT NULL REFERENCES Clubs, <br>
-    Gehalt DOUBLE NOT NULL, <br>
-    Vertragsbeginn DATE NOT NULL, <br>
-    Vertragsende DATE NOT NULL, <br>
-    Nummer INT NOT NULL UNIQUE)</p>
-<hr>
-<p>Trainer (<pk>TrainerId</pk> INT PK, <br>
-    Vorname TEXT NOT NULL, <br>
-    Nachname TEXT NOT NULL, <br>
-    Club NOT NULL REFERENCES Clubs, <br>
+    <fk>Club</fk> NOT NULL REFERENCES Clubs(Name), <br>
     Gehalt DOUBLE NOT NULL, <br>
     Vertragsbeginn DATE NOT NULL, <br>
     Vertragsende DATE NOT NULL, <br>
     Bereich TEXT NOT NULL)</p>
 <hr>
-<p>Zuschauer (<pk>ZuschId</pk> INT PK, <br>
+<p>Zuschauer (<pk>ZuschId</pk> INT, <br>
     Vorname TEXT NOT NULL, <br>
     Nachname TEXT NOT NULL, <br>
-    Lieblingsverein REFERENCES Clubs (Name))</p>
+    <fk>Lieblingsverein</fk> REFERENCES Clubs(Name))</p>
 <hr>
-<p>Begegnungen (<pk>Heim</pk> REFERENCES Clubs (Name) PK, <br>
-    <pk>Gast</pk> REFERENCES Clubs (Name) PK, <br>
-    <pk>Spieldatum</pk> DATE NOT NULL PK, <br>
-    Austragungsort NOT NULL REFERENCES Clubs (Stadion), <br>
+<p>Begegnungen (<fk><pk>Heim</pk></fk> REFERENCES Clubs(Name), <br>
+    <fk><pk>Gast</pk></fk> REFERENCES Clubs(Name), <br>
+    <pk>Spieldatum</pk> DATE NOT NULL, <br>
+    <fk>Austragungsort</fk> NOT NULL REFERENCES Clubs(Stadion), <br>
     ToreHeim INT NOT NULL, <br>
     ToreGast INT NOT NULL, <br>
     Besucherzahl INT NOT NULL)</p>
 <hr>
-<p>Ligen (<pk>LigaId</pk> INT PK, <br>
+<p>Ligen (<pk>LigaId</pk> INT, <br>
     Name TEXT NOT NULL, <br>
     Rangliste ENUM NOT NULL, <br>
     Preisgeld DOUBLE NOT NULL)</p>
