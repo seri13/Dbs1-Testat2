@@ -37,14 +37,14 @@ h3 {
 </head>
 <body>
 <hr>
-<p>Clubs (<pk>ClubId</pk> INT, <br>
+<p>Clubs (<pk>ClubId</pk> INT PK, <br>
     Name TEXT NOT NULL, <br>
     Stadt TEXT NOT NULL, <br>
     Stadion TEXT NOT NULL, <br>
     Budget DOUBLE NOT NULL, <br>
     Gründungsjahr DATE NOT NULL)</p>
 <hr>
-<p>Angestellte (<pk>AngId</pk> INT, <br>
+<p>Angestellte (<pk>AngId</pk> INT PK, <br>
     Vorname TEXT NOT NULL, <br>
     Nachname TEXT NOT NULL, <br>
     Club NOT NULL REFERENCES Clubs, <br>
@@ -52,7 +52,7 @@ h3 {
     Vertragsbeginn DATE NOT NULL, <br>
     Vertragsende DATE NOT NULL, <br>
 <hr>
-<p>Spieler (<pk>SpielerId</pk> INT, <br>
+<p>Spieler (<pk>SpielerId</pk> INT PK, <br>
     Vorname TEXT NOT NULL, <br>
     Nachname TEXT NOT NULL, <br>
     Club NOT NULL REFERENCES Clubs, <br>
@@ -61,7 +61,7 @@ h3 {
     Vertragsende DATE NOT NULL, <br>
     Nummer INT NOT NULL UNIQUE)</p>
 <hr>
-<p>Trainer (<pk>TrainerId</pk> INT, <br>
+<p>Trainer (<pk>TrainerId</pk> INT PK, <br>
     Vorname TEXT NOT NULL, <br>
     Nachname TEXT NOT NULL, <br>
     Club NOT NULL REFERENCES Clubs, <br>
@@ -70,19 +70,20 @@ h3 {
     Vertragsende DATE NOT NULL, <br>
     Bereich TEXT NOT NULL)</p>
 <hr>
-<p>Zuschauer (<pk>ZuschId</pk> INT, <br>
+<p>Zuschauer (<pk>ZuschId</pk> INT PK, <br>
     Vorname TEXT NOT NULL, <br>
     Nachname TEXT NOT NULL, <br>
     Lieblingsverein REFERENCES Clubs (Name))</p>
 <hr>
-<p>Begegnungen (<pk>Heim</pk> REFERENCES Clubs (Name), <br>
-    <pk>Gast</pk> REFERENCES Clubs (Name), <br>
+<p>Begegnungen (<pk>Heim</pk> REFERENCES Clubs (Name) PK, <br>
+    <pk>Gast</pk> REFERENCES Clubs (Name) PK, <br>
+    <pk>Spieldatum</pk> DATE NOT NULL PK, <br>
     Austragungsort NOT NULL REFERENCES Clubs (Stadion), <br>
     ToreHeim INT NOT NULL, <br>
     ToreGast INT NOT NULL, <br>
     Besucherzahl INT NOT NULL)</p>
 <hr>
-<p>Ligen (<pk>LigaId</pk> INT, <br>
+<p>Ligen (<pk>LigaId</pk> INT PK, <br>
     Name TEXT NOT NULL, <br>
     Rangliste ENUM NOT NULL, <br>
     Preisgeld DOUBLE NOT NULL)</p>
