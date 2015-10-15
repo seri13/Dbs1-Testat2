@@ -42,6 +42,7 @@ h3 {
 <hr>
 <p>Clubs (<pk>ClubId</pk> INT, <br>
     Name TEXT NOT NULL, <br>
+    <fk>Liga</fk> NOT NULL REFERENCES Ligen(LigaId), <br>
     Stadt TEXT NOT NULL, <br>
     Stadion TEXT NOT NULL, <br>
     Budget DOUBLE NOT NULL, <br>
@@ -55,26 +56,16 @@ h3 {
     Vertragsende DATE NOT NULL, <br>
     Gehalt DOUBLE NOT NULL) </p>
 <hr>
-<p>Spieler (<pk>SpielerId</pk> INT, <br>
-    Vorname TEXT NOT NULL, <br>
-    Nachname TEXT NOT NULL, <br>
+<p>Spieler (<fk><pk>AngId</pk><fk> REFERENCES Angestellte, <br>
     <fk>Club</fk> NOT NULL REFERENCES Clubs(ClubId), <br>
-    Vertragsbeginn DATE NOT NULL, <br>
-    Vertragsende DATE NOT NULL, <br>
-    Gehalt DOUBLE NOT NULL, <br>
     Nummer INT NOT NULL, <br>
     Position TEXT NOT NULL)</p>
 <hr>
-<p>Trainer (<pk>TrainerId</pk> INT, <br>
-    Vorname TEXT NOT NULL, <br>
-    Nachname TEXT NOT NULL, <br>
+<p>Trainer (<fk><pk>AngId</pk></fk> REFERENCES Angestellte, <br>
     <fk>Club</fk> NOT NULL REFERENCES Clubs(ClubId), <br>
-    Vertragsbeginn DATE NOT NULL, <br>
-    Vertragsende DATE NOT NULL, <br>
-    Gehalt DOUBLE NOT NULL, <br>
     Bereich TEXT NOT NULL)</p>
 <hr>
-<p>Zuschauer (<pk>ZuschId</pk> INT, <br>
+<p>Zuschauer (<pk>ZuschauerId</pk> INT, <br>
     Vorname TEXT NOT NULL, <br>
     Nachname TEXT NOT NULL, <br>
     <fk>Lieblingsverein</fk> REFERENCES Clubs(ClubId))</p>
