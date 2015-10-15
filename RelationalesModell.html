@@ -51,17 +51,17 @@ h3 {
     Vorname TEXT NOT NULL, <br>
     Nachname TEXT NOT NULL, <br>
     <fk>Club</fk> NOT NULL REFERENCES Clubs(Name), <br>
-    Gehalt DOUBLE NOT NULL, <br>
     Vertragsbeginn DATE NOT NULL, <br>
-    Vertragsende DATE NOT NULL) </p>
+    Vertragsende DATE NOT NULL, </p>
+    Gehalt DOUBLE NOT NULL) <br>
 <hr>
 <p>Spieler (<pk>SpielerId</pk> INT, <br>
     Vorname TEXT NOT NULL, <br>
     Nachname TEXT NOT NULL, <br>
     <fk>Club</fk> NOT NULL REFERENCES Clubs(Name), <br>
-    Gehalt DOUBLE NOT NULL, <br>
     Vertragsbeginn DATE NOT NULL, <br>
     Vertragsende DATE NOT NULL, <br>
+    Gehalt DOUBLE NOT NULL, <br>
     Nummer INT NOT NULL, <br>
     Position TEXT NOT NULL)</p>
 <hr>
@@ -69,9 +69,9 @@ h3 {
     Vorname TEXT NOT NULL, <br>
     Nachname TEXT NOT NULL, <br>
     <fk>Club</fk> NOT NULL REFERENCES Clubs(Name), <br>
-    Gehalt DOUBLE NOT NULL, <br>
     Vertragsbeginn DATE NOT NULL, <br>
     Vertragsende DATE NOT NULL, <br>
+    Gehalt DOUBLE NOT NULL, <br>
     Bereich TEXT NOT NULL)</p>
 <hr>
 <p>Zuschauer (<pk>ZuschId</pk> INT, <br>
