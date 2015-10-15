@@ -53,6 +53,10 @@ h3 {
     Budget DOUBLE NOT NULL, <br>
     Gründungsjahr DATE NOT NULL)</p>
 <hr>
+<p>Sieger (<fk><pk>Liga</pk></fk> REFERENCES Ligen(LigaId), <br>
+    <fk><pk>Sieger</pk></fk> REFERENCES Clubs(ClubId), <br>
+    <pk>Saison</pk> TEXT(4) NOT NULL)</p>
+<hr>
 <p>Angestellte (<pk>AngId</pk> INT, <br>
     Vorname TEXT NOT NULL, <br>
     Nachname TEXT NOT NULL, <br>
