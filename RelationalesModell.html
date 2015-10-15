@@ -40,6 +40,11 @@ h3 {
 </head>
 <body>
 <hr>
+<p>Ligen (<pk>LigaId</pk> INT, <br>
+    Name TEXT NOT NULL, <br>
+    Rangliste ENUM NOT NULL, <br>
+    Preisgeld DOUBLE NOT NULL)</p>
+<hr>
 <p>Clubs (<pk>ClubId</pk> INT, <br>
     Name TEXT NOT NULL, <br>
     <fk>Liga</fk> NOT NULL REFERENCES Ligen(LigaId), <br>
@@ -47,11 +52,6 @@ h3 {
     Stadion TEXT NOT NULL, <br>
     Budget DOUBLE NOT NULL, <br>
     Gründungsjahr DATE NOT NULL)</p>
-<hr>
-<p>Ligen (<pk>LigaId</pk> INT, <br>
-    Name TEXT NOT NULL, <br>
-    Rangliste ENUM NOT NULL, <br>
-    Preisgeld DOUBLE NOT NULL)</p>
 <hr>
 <p>Angestellte (<pk>AngId</pk> INT, <br>
     Vorname TEXT NOT NULL, <br>
