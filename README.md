@@ -19,6 +19,7 @@ Authors: Seraina Tschuor & Lukas Schneider
 
 #Example Data
 `Liga`
+
  Name        | Rangliste                  | Preisgeld
  :----------:|---------------------------:|--------------:
  Superleague | 1. FC Basel                | 1'000'000 CHF
@@ -31,11 +32,12 @@ Authors: Seraina Tschuor & Lukas Schneider
              | 8. Grasshopper Club Zürich |
              | 9. FC Vaduz                |
              | 10. Aarau                  |
-             
+
 The `Liga` Table is somewhat abusing an `ENUM` for the orderer "table"
 so we don't have to create another table when an orderer list is enough.
              
  `Clubs`
+ 
  Name                    | Stadt      | Stadion           | Budget | Gründungsjahr
  :----------------------:|-----------:|------------------:|-------:|--------------:
  FC Zürich               | Zürich     | Letzigrund        | NULL   | 1896
@@ -50,6 +52,7 @@ so we don't have to create another table when an orderer list is enough.
  FC Basel                | Basel      | St. Jakob-Park    | NULL   | 1893
  
  `Sieger`
+ 
  Liga        | Siger     | Saison
  :----------:|----------:|-------:
  Superleague | Basel     | 2015
