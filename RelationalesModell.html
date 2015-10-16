@@ -77,6 +77,7 @@ h3 {
     <fk><pk>Gast</pk></fk> REFERENCES Clubs(ClubId), <br>
     <pk>Spieldatum</pk> DATE, <br>
     <fk>Austragungsort</fk> NOT NULL REFERENCES Clubs(Stadion), <br>
+    <fk>Gewinner</fk> REFERENCES Clubs(ClubId), <br>
     ToreHeim INT NOT NULL, <br>
     ToreGast INT NOT NULL)</p>
 <hr>
