@@ -42,7 +42,6 @@ h3 {
 <hr>
 <p>Ligen(<pk>LigaId</pk> INT, <br>
     Name TEXT NOT NULL, <br>
-    Rangliste ENUM, <br>
     Preisgeld DOUBLE NOT NULL)</p>
 <hr>
 <p>Clubs(<pk>ClubId</pk> INT, <br>
@@ -53,9 +52,11 @@ h3 {
     Budget DOUBLE NOT NULL, <br>
     Gründungsjahr DATE NOT NULL)</p>
 <hr>
-<p>Sieger(<fk><pk>Liga</pk></fk> REFERENCES Ligen(LigaId), <br>
-    <fk><pk>Sieger</pk></fk> REFERENCES Clubs(ClubId), <br>
-    <pk>Saison</pk> INT)</p>
+<p>Abstiege(<fk><pk>Neue Liga</pk></fk> REFERENCES Ligen(LigaId), <br>
+    <fk><pk>Absteiger</pk></fk> REFERENCES Clubs(ClubId), <br>
+<hr>
+<p>Aufstiege(<fk><pk>NeueLiga</pk></fk> REFERENCES Ligen(LigaId), <br>
+    <fk><pk>Club</pk></fk> REFERENCES Clubs(ClubId))</p>
 <hr>
 <p>Angestellten(<pk>AngId</pk> INT, <br>
     Vorname TEXT NOT NULL, <br>
@@ -90,7 +91,6 @@ h3 {
     <fk><pk>Gast</pk></fk> REFERENCES Clubs(ClubId), <br>
     <fk><pk>Spieldatum</pk></fk> REFERENCES Begegnungen(Spieldatum), <br>
     <fk><pk>Besucher</pk></fk> REFERENCES Zuschauer(ZuschauerId), </p>
-
 <hr>
 </body>
 </html>
