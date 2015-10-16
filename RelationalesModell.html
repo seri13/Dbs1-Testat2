@@ -81,8 +81,8 @@ h3 {
     ToreGast INT NOT NULL)</p>
 <hr>
 <p>Zuschauer(<pk>ZuschauerId</pk> INT, <br>
-    Vorname TEXT NOT NULL, <br>
-    Nachname TEXT NOT NULL, <br>
+    Vorname TEXT, <br>
+    Nachname TEXT, <br>
     <fk>Lieblingsverein</fk> REFERENCES Clubs(ClubId))</p>
 <hr>
 <p>Zuschauerverteilungen(<fk><pk>Heim</pk></fk> REFERENCES Clubs(ClubId), <br>
