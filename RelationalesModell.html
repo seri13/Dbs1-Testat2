@@ -46,32 +46,38 @@ h3 {
 <hr>
 <p>Clubs(<pk>ClubId</pk> INT, <br>
     Name TEXT NOT NULL, <br>
-    <fk>Liga</fk> NOT NULL REFERENCES Ligen(LigaId), <br>
     Stadt TEXT NOT NULL, <br>
     Stadion TEXT NOT NULL, <br>
     Budget DOUBLE NOT NULL, <br>
     Gründungsjahr DATE NOT NULL)</p>
 <hr>
+<p>Clubverteilungen(<fk><pk>Club</pk></fk> REFERENCES Clubs(ClubId), <br>
+    <pk><fk>Liga</fk></pk> REFERENCES Ligen(LigaId))</p>
+<hr>
 <p>Abstiege(<fk><pk>Neue Liga</pk></fk> REFERENCES Ligen(LigaId), <br>
     <fk><pk>Absteiger</pk></fk> REFERENCES Clubs(ClubId), <br>
+    <pk>Saison</pk> DATE NOT NULL)</p>
 <hr>
 <p>Aufstiege(<fk><pk>NeueLiga</pk></fk> REFERENCES Ligen(LigaId), <br>
-    <fk><pk>Club</pk></fk> REFERENCES Clubs(ClubId))</p>
+    <fk><pk>Aufsteiger</pk></fk> REFERENCES Clubs(ClubId), <br>
+    <pk>Saison</pk> DATE NOT NULL)</p>
 <hr>
 <p>Angestellten(<pk>AngId</pk> INT, <br>
     Vorname TEXT NOT NULL, <br>
     Nachname TEXT NOT NULL, <br>
-    <fk>Club</fk> NOT NULL REFERENCES Clubs(ClubId), <br>
-    Vertragsbeginn DATE NOT NULL, <br>
-    Vertragsende DATE NOT NULL, <br>
     Gehalt DOUBLE, <br>
     Nummer INT, <br>
     Position TEXT, <br>
     Bereich TEXT) </p>
 <hr>
+<p>Anstellungen(<fk><pk>AngId</pk></fk> REFERENCES Angestellten, <br>
+    <fk><pk>Club</pk></fk> REFERENCES Clubs(ClubId)) </p>
+<hr>
 <p>Transfers(<fk><pk>Käufer</pk></fk> REFERENCES Clubs(ClubId), <br>
     <fk><pk>Verkäufer</pk></fk> REFERENCES Clubs(ClubId), <br>
     <fk><pk>Spieler</pk></fk> REFERENCES Spieler(SpielerId), <br>
+    Vertragsbeginn DATE NOT NULL, <br>
+    Vertragsende DATE NOT NULL, <br>
     Ablösesumme DOUBLE NOT NULL)</p>
 <hr>
 <p>Begegnungen(<fk><pk>Heim</pk></fk> REFERENCES Clubs(ClubId), <br>
