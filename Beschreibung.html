@@ -33,9 +33,10 @@ eine Stadt, ein Stadion, ein Gründungsjahr und ein Budget. Jeder
 Club hat nur eine Mannschaft (vereinfachung) welche in genau
 einer Liga spielt.</li>
 <li>Alle Spieler eines Clubs werden von einem bis drei Trainern
-trainiert, wobei jeder einen bestimmten Spezialbereich hat.
-Jeder Spieler hat eine bestimmte Nummer, welche zur gleichen
-Zeit nur einmal vergeben sein darf.</li>
+trainiert, wobei jeder einen bestimmten Spezialbereich hat. 
+(Wann welcher Trainier welchen Spieler trainiert ist nicht
+modelliert) Jeder Spieler hat eine bestimmte Nummer, welche zur
+gleichen Zeit nur einmal vergeben sein darf.</li>
 <li>Angestellte bekommen ein Gehalt. Dieses Gehalt wird in einem
 Vertrag festgelegt, wenn der Vertrag ausläuft kann dieser
 entweder verlängert werden oder der Angestellte kann gegen
@@ -58,5 +59,12 @@ Punktegleichstand entscheidet die Tordifferenz.</li>
 und steigt je nach Liga auf. Die oder der letzplatzierte(n), je
 nach Liga, steigen ab.</li>
 </ul>
+
+<p>Das System sollte möglichst international kompatibel sein.
+Da die Regeln je nach Liga über die Zeit hinweg ändern können,
+sollten diese nicht in der Datenbank modelliert sein. Diese
+Regeln (und auch Saisondaten) müssen in den Zugriffen
+formultiert sein.
+</p>
 </body>
 </html>
