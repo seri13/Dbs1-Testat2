@@ -84,8 +84,8 @@ h3 {
     <pk>Spieldatum</pk> DATE, <br>
     <fk>Austragungsort</fk> NOT NULL REFERENCES Clubs(Stadion), <br>
     <fk>Gewinner</fk> REFERENCES Clubs(ClubId), <br>
-    ToreHeim INT NOT NULL, <br>
-    ToreGast INT NOT NULL)</p>
+    ToreHeim INT, <br>
+    ToreGast INT)</p>
 <hr>
 <p>Zuschauer(<pk>ZuschauerId</pk> INT, <br>
     Vorname TEXT, <br>
