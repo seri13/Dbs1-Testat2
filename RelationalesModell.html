@@ -31,7 +31,6 @@ h3 {
 }
 </style>
 
-
 <!-- The content of the document  -->
 <html>
 <head>
@@ -41,25 +40,18 @@ h3 {
 <hr>
 <p>Ligen(<pk>LigaId</pk> INT, <br>
     Name TEXT NOT NULL, <br>
-    Preisgeld DOUBLE NOT NULL)</p>
+    Preisgeld DOUBLE NOT NULL, <br>
+    Saison INT NOT NULL)</p>
 <hr>
 <p>Clubs(<pk>ClubId</pk> INT, <br>
     Name TEXT NOT NULL, <br>
     Stadt TEXT NOT NULL, <br>
     Stadion TEXT NOT NULL, <br>
     Budget DOUBLE NOT NULL, <br>
-    Gründungsjahr DATE NOT NULL)</p>
+    Gründungsjahr INT NOT NULL)</p>
 <hr>
 <p>Clubverteilungen(<fk><pk>Club</pk></fk> REFERENCES Clubs(ClubId), <br>
     <pk><fk>Liga</fk></pk> REFERENCES Ligen(LigaId))</p>
-<hr>
-<p>Abstiege(<fk><pk>Neue Liga</pk></fk> REFERENCES Ligen(LigaId), <br>
-    <fk><pk>Absteiger</pk></fk> REFERENCES Clubs(ClubId), <br>
-    <pk>Saison</pk> DATE NOT NULL)</p>
-<hr>
-<p>Aufstiege(<fk><pk>NeueLiga</pk></fk> REFERENCES Ligen(LigaId), <br>
-    <fk><pk>Aufsteiger</pk></fk> REFERENCES Clubs(ClubId), <br>
-    <pk>Saison</pk> DATE NOT NULL)</p>
 <hr>
 <p>Angestellten(<pk>AngId</pk> INT, <br>
     Vorname TEXT NOT NULL, <br>
@@ -72,16 +64,18 @@ h3 {
 <p>Anstellungen(<fk><pk>AngId</pk></fk> REFERENCES Angestellten, <br>
     <fk><pk>Club</pk></fk> REFERENCES Clubs(ClubId)) </p>
 <hr>
-<p>Transfers(<fk><pk>Käufer</pk></fk> REFERENCES Clubs(ClubId), <br>
-    <fk><pk>Verkäufer</pk></fk> REFERENCES Clubs(ClubId), <br>
-    <fk><pk>Spieler</pk></fk> REFERENCES Spieler(SpielerId), <br>
+<p>Transfers(<pk>TransferId</pk> INT, <br>
+    <fk>Käufer</fk> REFERENCES Clubs(ClubId), <br>
+    <fk>Verkäufer</fk> REFERENCES Clubs(ClubId), <br>
+    <fk>Angestellter</fk> REFERENCES Angestellten(AngId), <br>
     Vertragsbeginn DATE NOT NULL, <br>
     Vertragsende DATE NOT NULL, <br>
     Ablösesumme DOUBLE NOT NULL)</p>
 <hr>
-<p>Begegnungen(<fk><pk>Heim</pk></fk> REFERENCES Clubs(ClubId), <br>
-    <fk><pk>Gast</pk></fk> REFERENCES Clubs(ClubId), <br>
-    <pk>Spieldatum</pk> DATE, <br>
+<p>Begegnungen(<pk>BegenungsId</pk> IN, <br>
+    <fk>Heim</fk> REFERENCES Clubs(ClubId), <br>
+    <fk>Gast</fk> REFERENCES Clubs(ClubId), <br>
+    Spieldatum DATE, <br>
     <fk>Austragungsort</fk> NOT NULL REFERENCES Clubs(Stadion), <br>
     <fk>Gewinner</fk> REFERENCES Clubs(ClubId), <br>
     ToreHeim INT, <br>
@@ -92,10 +86,9 @@ h3 {
     Nachname TEXT, <br>
     <fk>Lieblingsverein</fk> REFERENCES Clubs(ClubId))</p>
 <hr>
-<p>Zuschauerverteilungen(<fk><pk>Heim</pk></fk> REFERENCES Clubs(ClubId), <br>
-    <fk><pk>Gast</pk></fk> REFERENCES Clubs(ClubId), <br>
-    <fk><pk>Spieldatum</pk></fk> REFERENCES Begegnungen(Spieldatum), <br>
-    <fk><pk>Besucher</pk></fk> REFERENCES Zuschauer(ZuschauerId), </p>
+<p>Zuschauerverteilungen(<fk><pk>Spiel</pk></fk> REFERENCES Begegnungen(BegegnungsId), <br>
+    <fk><pk>Zuschauer</pk></fk> RERFERENCES Zuschauer(ZuschauerId)) </p>
+    
 <hr>
 </body>
 </html>
