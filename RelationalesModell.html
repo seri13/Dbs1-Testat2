@@ -70,9 +70,9 @@ h3 {
     <fk>Angestellter</fk> REFERENCES Angestellten(AngId), <br>
     Vertragsbeginn DATE NOT NULL, <br>
     Vertragsende DATE NOT NULL, <br>
-    Ablösesumme DOUBLE NOT NULL)</p>
+    Summe DOUBLE NOT NULL)</p>
 <hr>
-<p>Begegnungen(<pk>BegenungsId</pk> IN, <br>
+<p>Begegnungen(<pk>BegenungsId</pk> INT, <br>
     <fk>Heim</fk> REFERENCES Clubs(ClubId), <br>
     <fk>Gast</fk> REFERENCES Clubs(ClubId), <br>
     Spieldatum DATE, <br>

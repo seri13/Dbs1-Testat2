@@ -1,3 +1,8 @@
+/*
+ * !! TODO !!
+ */
+ 
+
 select name, salaer from angestellter where salaer > 5000;
 
 select name, salaer from angestellter where wohnort = 'Luzern' AND (salaer < 5000 OR salaer > 8000);

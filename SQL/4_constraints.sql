@@ -1,41 +1,49 @@
 /*
  * Fremdschluessel setzen
+ * TODO: -ON DELETE CASCADE?
+ *       -Additional Constraints?
  */
- ALTER TABLE Angestellter 
- ADD CONSTRAINT fk_AngAng 
-    FOREIGN KEY (Chef) REFERENCES Angestellter (PersNr)
+ ALTER TABLE Transfers 
+ ADD CONSTRAINT fk_tBuyer 
+    FOREIGN KEY (Käufer) REFERENCES Clubs (ClubId)
+ ;
+ ALTER TABLE Transfers 
+ ADD CONSTRAINT fk_tSeller
+    FOREIGN KEY (Verkäufer) REFERENCES Clubs (ClubId)
+ ;
+ ALTER TABLE Transfers 
+ ADD CONSTRAINT fk_tEmployee 
+    FOREIGN KEY (Angestellter) REFERENCES Angestellten (AngId)
+ ;
+  
+ ALTER TABLE Begegnungnen 
+ ADD CONSTRAINT fk_gmHome 
+    FOREIGN KEY (Heim)  REFERENCES Clubs (ClubId)
+ ;
+ ALTER TABLE Begegnungnen 
+ ADD CONSTRAINT fk_gmAway 
+    FOREIGN KEY (Gast)  REFERENCES Clubs (ClubId)
+ ;
+ ALTER TABLE Begegnungnen 
+ ADD CONSTRAINT fk_gmStadium
+    FOREIGN KEY (Austragungsort) REFERENCES Clubs (Stadion
+ ;
+ ALTER TABLE Begegnungnen 
+ ADD CONSTRAINT fk_gmWinner 
+    FOREIGN KEY (Gewinner)  REFERENCES Clubs (ClubId)
  ;
  
- ALTER TABLE Angestellter 
- ADD CONSTRAINT fk_AngAbt 
-    FOREIGN KEY (AbtNr) REFERENCES Abteilung (AbtNr)
- ;
- 
- ALTER TABLE AbtLeitung 
- ADD CONSTRAINT fk_AbtLAbt 
-    FOREIGN KEY (AbtNr) REFERENCES Abteilung (AbtNr)
+ ALTER TABLE Zuschauer 
+ ADD CONSTRAINT fk_vFavClub 
+    FOREIGN KEY (Lieblingsverein) REFERENCES Clubs (ClubId)
     ON DELETE CASCADE
  ;
  
- ALTER TABLE AbtLeitung 
- ADD CONSTRAINT fk_AbtLAng 
-    FOREIGN KEY (AbtChef) REFERENCES Angestellter(PersNr)
-    ON DELETE CASCADE
+ ALTER TABLE Zuschauerverteilungen 
+ ADD CONSTRAINT fk_vdGame
+    FOREIGN KEY (Spiel) REFERENCES Begegnungnen (BegegnungsId)
  ;
- 
- ALTER TABLE Projekt 
- ADD CONSTRAINT fk_ProjAng 
-    FOREIGN KEY (ProjLeiter) REFERENCES Angestellter(PersNr)
+ ALTER TABLE Zuschauerverteilungen 
+ ADD CONSTRAINT fk_vdViewer 
+    FOREIGN KEY (Zuschauer) REFERENCES Zuschauer (ZuschauerId)
  ;
- 
- ALTER TABLE ProjektZuteilung 
- ADD CONSTRAINT fk_ProjzAng 
-    FOREIGN KEY (PersNr) REFERENCES Angestellter(PersNr)
-    ON DELETE CASCADE
- ;
- 
- ALTER TABLE ProjektZuteilung 
- ADD CONSTRAINT fk_ProjzProj 
-    FOREIGN KEY (ProjNr) REFERENCES Projekt(ProjNr)
-    ON DELETE CASCADE
-;
