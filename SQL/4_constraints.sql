@@ -24,10 +24,6 @@
  FOREIGN KEY (Gast) REFERENCES Clubs (ClubId);
 
  ALTER TABLE Begegnungnen
- ADD CONSTRAINT fk_gmStadium
- FOREIGN KEY (Austragungsort) REFERENCES Clubs (Stadion);
-
- ALTER TABLE Begegnungnen
  ADD CONSTRAINT fk_gmWinner
  FOREIGN KEY (Gewinner) REFERENCES Clubs (ClubId);
 
