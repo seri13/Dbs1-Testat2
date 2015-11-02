@@ -4,7 +4,6 @@
 
 CREATE TYPE BEREICHE AS ENUM ('Chef', 'Assistent', 'Torhüter');
 CREATE TYPE POSITIONEN AS ENUM ('Tor', 'Verteidigung', 'Mittelfeld', 'Angriff');
-CREATE TYPE SEKTOREN AS ENUM ('Heim - sitzen', 'Heim - Stehen', 'Gast - Sitzen', 'Gast - Stehen');
 
 /*
  * Tabellen erzeugen
@@ -79,6 +78,5 @@ CREATE TABLE Zuschauer (
 CREATE TABLE Zuschauerverteilungen (
   Spiel INTEGER,
   Zuschauer INTEGER,
-  Sektor SEKTOREN,
   PRIMARY KEY (Spiel, Zuschauer)
 );

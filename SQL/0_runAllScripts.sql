@@ -4,8 +4,8 @@
 \echo
 
 SET client_min_messages = ERROR;
-\set user ligauser 
-\set password '\'fussballligen\''
+\set user ligauser
+\set password '\'soccer\''
 \set database fussballligen
 \set promptvar ''
 
@@ -59,4 +59,3 @@ CREATE DATABASE :database WITH OWNER :user ENCODING 'UTF8';
 \set ECHO queries
 -- query the database
 \ir 5_queries.sql
-
