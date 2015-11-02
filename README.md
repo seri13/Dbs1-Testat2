@@ -12,7 +12,7 @@ All files which describe our sports club system.
 
 The command to turn the three files into a pdf:
 
-    wkhtmltopdf --footer-center "Testat 1 - Dbs1 - Seraina Tschuor & Lukas Schneider" --footer-left "[page]/[toPage]" --footer-right "[date]" --header-center "Sportliga - Testat 1" --header-center "Sportliga - Testat 1 - Datenbanksysteme 1" --disable-smart-shrinking cover cover.html Beschreibung.html Klassendiagramm.html RelationalesModell.html Testat1.pdf
+    wkhtmltopdf --footer-center "Testat 2 - Dbs1 - Seraina Tschuor & Lukas Schneider" --footer-left "[page]/[toPage]" --footer-right "[date]" --header-center "Sportliga - Testat 2" --header-center "Sportliga - Testat 2 - Datenbanksysteme 1" --disable-smart-shrinking cover cover.html Beschreibung.html Klassendiagramm.html RelationalesModell.html Testat2.pdf
 
 This is meant for Datenbanksysteme 1 - HS15 at Hochschule Rapperswil  
 Authors: Seraina Tschuor & Lukas Schneider
@@ -31,10 +31,10 @@ Authors: Seraina Tschuor & Lukas Schneider
  4      | Dosenbach Challenge League            |   130'000 CHF | 2009   |
  1      | Bundesliga                            | 5'000'000 CHF | 2009   |
  2      | 2. Bundesliga                         | 1'000'000 CHF | 2009   |
- 
- 
+
+
  `Clubs`
- 
+
  ClubId | Name                    | Stadt      | Stadion                       | Budget | Gründungsjahr
  :-----:|------------------------:|-----------:|------------------------------:|-------:|--------------:
  108    | FC Zürich               | Zürich     | Letzigrund                    | NULL   | 1896
@@ -57,18 +57,18 @@ Authors: Seraina Tschuor & Lukas Schneider
  6      | FSV Frankfurt           | Frankfurt  | Frankfurter Volksbank Stadion | NULL   | 1899
  ...    | ...                     | ...        | ...                           | ...    | ...
  1      | FC Winterthur           | Winterthur | Schützenwiese                 | NULL   | 1896
- 
+
  `Angestellten`
- 
+
  AngId | Vorname | Nachname           | Club | Gehalt | Nummer | Position           | Bereich
  :----:|--------:|-------------------:|-----:|-------:|-------:|-------------------:|--------:|
  ...   | ...     | ...                | ...  | ...    | ...    | ...                | ...       
  67    | Vinícus | de Freitas Ribeiro | 108  | NULL   | 28     | Linker Verteidiger | NULL       
  ...   | ...     | ...                | ...  | ...    | ...    | ...                | ...
- 
+
  `Transfers`
- 
- TransferId | Käufer | Verkäufer | Angestellter  | Vertragsbeginn | Vertragsende | Summe 
+
+ TransferId | Käufer | Verkäufer | Angestellter  | Vertragsbeginn | Vertragsende | Summe
  ----------:|-------:|----------:|--------------:|---------------:|-------------:|------:
  ...        | ...    | ...       | ...           | ...            | ...          | ...         
  ...        | 108    | 8         | 67            | 12-August-2015 | 30-June-2016 | 380 000 CHF       
