@@ -35,7 +35,7 @@ CREATE DATABASE :database WITH OWNER :user ENCODING 'UTF8';
 \encoding 'UTF8'
 
 -- create extensions
-\ir 1_extensions.sql
+-- \ir 1_extensions.sql
 
 -- create schema
 \ir 2_schema.sql

@@ -28,7 +28,7 @@ CREATE TABLE Clubs (
 CREATE TABLE Clubverteilungen (
   Club INTEGER NOT NULL,
   Liga INTEGER  NOT NULL,
-  PRIMARY KEY(Club, Liga),
+  PRIMARY KEY(Club, Liga)
 );
 
 CREATE TABLE Angestellten (
@@ -65,7 +65,7 @@ CREATE TABLE Begegnungnen (
   Austragungsort VARCHAR(20) NOT NULL,
   Gewinner INTEGER NOT NULL,
   ToreHeim INTEGER NOT NULL,
-  ToreGast INTEGER NOT NULL,
+  ToreGast INTEGER NOT NULL
 );
 
 CREATE TABLE Zuschauer (
