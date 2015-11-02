@@ -45,6 +45,6 @@
  ;
 
  ALTER TABLE Zuschauerverteilungen
- ADD CONSTRAINT fk_vdViewer
+ ADD CONSTRAINT fk_vdVisitor
     FOREIGN KEY (Besucher) REFERENCES Zuschauer (ZuschauerId)
  ;
