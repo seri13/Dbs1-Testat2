@@ -47,4 +47,5 @@
  ALTER TABLE Zuschauerverteilungen
  ADD CONSTRAINT fk_vdViewer
     FOREIGN KEY (Zuschauer) REFERENCES Zuschauer (ZuschauerId)
+    ON DELETE CASCADE
  ;
