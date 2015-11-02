@@ -43,6 +43,8 @@
  ADD CONSTRAINT fk_vdGame
     FOREIGN KEY (Spiel) REFERENCES Begegnungnen (BegegnungsId)
  ;
+ 
  ALTER TABLE Zuschauerverteilungen 
  ADD CONSTRAINT fk_vdViewer 
     FOREIGN KEY (Zuschauer) REFERENCES Zuschauer (ZuschauerId)
+ ;
