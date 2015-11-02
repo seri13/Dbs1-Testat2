@@ -77,6 +77,6 @@ CREATE TABLE Zuschauer (
 
 CREATE TABLE Zuschauerverteilungen (
   Spiel INTEGER,
-  Zuschauer INTEGER,
-  PRIMARY KEY (Spiel, Zuschauer)
+  Besucher INTEGER,
+  PRIMARY KEY (Spiel, Besucher)
 );
