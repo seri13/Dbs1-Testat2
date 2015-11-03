@@ -23,8 +23,6 @@ Windows:
 3. Folgendes Kommando, im Verzeichnis der vorliegenden SQL-Dateien, eintippen und ausführen:
 psql -U postgres -f 0_runAllScripts.sql
 
-Alternativ kann auch die Datei run.bat in der Konsole ausgeführt werden. Darin ist eine Anpassung der Konsolencodepage schon eingebaut.
-
 Sollten Fehler in der Darstellung von Zeichen auftreten (Umlaute etc.) kann man versuchen dies mit der Datei WindowsConsoleSettings.reg zu korrigieren.
 
 
