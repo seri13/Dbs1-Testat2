@@ -21,7 +21,7 @@ Windows:
 2. Überprüfen ob psql ausgeführt werden kann
 2.1 Wenn nicht muss in der Systemsteuerung die Umgebungsvariable PATH, für den aktuellen Benutzer oder für alle, durch den Pfad zum postgres\9.x\bin Verzeichnis ergänzt werden. Beispiel:
 3. Folgendes Kommando, im Verzeichnis der vorliegenden SQL-Dateien, eintippen und ausführen:
-psql -U postgres -f SQL\0_runAllScripts.sql
+psql -U postgres -f 0_runAllScripts.sql
 
 Alternativ kann auch die Datei run.bat in der Konsole ausgeführt werden. Darin ist eine Anpassung der Konsolencodepage schon eingebaut.
 
@@ -34,7 +34,7 @@ Linux / Mac OSX
 
 Unter Linux wird in den meisten Fällen ein eigener Benutzer postgres für die Datenbankverwaltung angelegt. Daher muss in der Grundkonfiguration jeweils sudo verwendet werden um Datenbankbefehle auszuführen.
 
-sudo -u postgres psql -f SQL/0_runAllScripts.sql
+sudo -u postgres psql -f 0_runAllScripts.sql
 
 Alternativ kann man sich für den Linux-Login einen postgres Superuser Account einrichten wonach die Verwendung von sudo -u postgres entfällt. Dies geschieht mit folgendem Kommando (LoginName durch den *nix-Account-Namen ersetzen):
 
