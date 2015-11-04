@@ -1,82 +1,82 @@
 /*
- * Enum Typen erzeugen
+ * enum Typen erzeugen
  */
 
-CREATE TYPE BEREICHE AS ENUM ('Chef', 'Assistent', 'Torhüter');
-CREATE TYPE POSITIONEN AS ENUM ('Tor', 'Verteidigung', 'Mittelfeld', 'Angriff');
+CREATE TYPE bereiche AS enum ('Chef', 'Assistent', 'Torhüter');
+CREATE TYPE positionen AS enum ('Tor', 'Verteidigung', 'Mittelfeld', 'Angriff');
 
 /*
  * Tabellen erzeugen
  */
 
 CREATE TABLE Ligen (
-  LigaId INTEGER  PRIMARY KEY,
-  Name VARCHAR(20) NOT NULL,
-  Preisgeld DECIMAL(15, 6) DEFAULT 0,
-  Saison SERIAL NOT NULL
+  LigaId integer  PRIMARY KEY,
+  Name text NOT NULL,
+  Preisgeld decimal(15, 6) DEFAULT 0,
+  Saison serial NOT NULL
 );
 
 CREATE TABLE Clubs (
-  ClubId INTEGER  PRIMARY KEY,
-  Name VARCHAR(20) NOT NULL,
-  Stadt VARCHAR(20) NOT NULL,
-  Stadion VARCHAR(20) NOT NULL,
-  Budget DECIMAL (15,6) DEFAULT 0,
-  Gründungsjahr SERIAL NOT NULL
+  ClubId integer  PRIMARY KEY,
+  Name text NOT NULL,
+  Stadt text NOT NULL,
+  Stadion text NOT NULL,
+  Budget decimal (15,6) DEFAULT 0,
+  Gründungsjahr serial NOT NULL
 );
 
 CREATE TABLE Clubverteilungen (
-  Club INTEGER NOT NULL,
-  Liga INTEGER  NOT NULL,
+  Club integer NOT NULL,
+  Liga integer  NOT NULL,
   PRIMARY KEY(Club, Liga)
 );
 
 CREATE TABLE Angestellten (
-  AngId INTEGER PRIMARY KEY,
-  Vorname VARCHAR(20) NOT NULL,
-  Nachname VARCHAR(20) NOT NULL,
-  Gehalt DECIMAL (15,6) NOT NULL,
-  Nummer INTEGER,
-  Position POSITIONEN,
-  Bereich BEREICHE
+  AngId integer PRIMARY KEY,
+  Vorname text NOT NULL,
+  Nachname text NOT NULL,
+  Gehalt decimal (15,6) NOT NULL,
+  Nummer integer,
+  Position positionen,
+  Bereich bereiche
 );
 
 CREATE TABLE Anstellungen (
-  AngId INTEGER NOT NULL,
-  Club INTEGER NOT NULL,
+  AngId integer NOT NULL,
+  Club integer NOT NULL,
   PRIMARY KEY(AngId, Club)
 );
 
 CREATE TABLE Transfers (
-  TransferId INTEGER PRIMARY KEY,
-  Käufer INTEGER NOT NULL,
-  Verkäufer INTEGER,
-  Angestellter INTEGER NOT NULL,
-  Vertragsbeginn DATE NOT NULL,
-  Vertragsende DATE NOT NULL,
-  Summe DECIMAL(15,6)
+  TransferId integer PRIMARY KEY,
+  Käufer integer NOT NULL,
+  Verkäufer integer,
+  Angestellter integer NOT NULL,
+  Vertragsbeginn date NOT NULL,
+  Vertragsende date NOT NULL,
+  Summe decimal(15,6)
 );
 
 CREATE TABLE Begegnungnen (
-  BegegnungsId INTEGER  PRIMARY KEY,
-  Heim INTEGER NOT NULL,
-  Gast INTEGER  NOT NULL,
-  Spieldatum DATE NOT NULL,
-  Austragungsort VARCHAR(20) NOT NULL,
-  Gewinner INTEGER NOT NULL,
-  ToreHeim INTEGER NOT NULL,
-  ToreGast INTEGER NOT NULL
+  BegegnungsId integer  PRIMARY KEY,
+  Heim integer NOT NULL,
+  Gast integer  NOT NULL,
+  Spieldatum date NOT NULL,
+  Austragungsort text NOT NULL,
+  Gewinner integer NOT NULL,
+  ToreHeim integer NOT NULL,
+  ToreGast integer NOT NULL
 );
 
 CREATE TABLE Zuschauer (
-  ZuschauerId INTEGER  PRIMARY KEY,
-  Vorname VARCHAR(20) NOT NULL,
-  Nachname VARCHAR(20) NOT NULL,
-  Lieblingsverein INTEGER
+  ZuschauerId integer  PRIMARY KEY,
+  Vorname text NOT NULL,
+  Nachname text NOT NULL,
+  Lieblingsverein integer
 );
 
 CREATE TABLE Zuschauerverteilungen (
-  Spiel INTEGER NOT NULL,
-  Besucher INTEGER NOT NULL,
+  Spiel integer NOT NULL,
+  Besucher integer NOT NULL,
   PRIMARY KEY (Spiel, Besucher)
 );
