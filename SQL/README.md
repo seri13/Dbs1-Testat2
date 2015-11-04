@@ -14,7 +14,7 @@ Zuschauerdaten
 Die Daten für die Zuschauer sind zufällig Generiert.
 Hier das Script zum erstellen beliebig vieler Daten.
 
-http://jsfiddle.net/LKS90/o97zd65a/3
+http://jsfiddle.net/LKS90/o97zd65a/4
 
 Ausführen der Skripts auf den verschiedenen Systemen
 ====================================================
