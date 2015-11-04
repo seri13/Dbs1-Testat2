@@ -8,7 +8,13 @@ Danach wird eine Datenbank mit diesem Benutzer als Besitzer erstellt.
 
 Anschliessend werden die Tabellen angelegt, mit Daten befüllt und ein paar Abfragen darauf ausgeführt.
 
+Zuschauerdaten
+==============
 
+Die Daten für die Zuschauer sind zufällig Generiert.
+Hier das Script zum erstellen beliebig vieler Daten.
+
+http://jsfiddle.net/LKS90/o97zd65a/2/#&togetherjs=08jso8Acc4
 
 Ausführen der Skripts auf den verschiedenen Systemen
 ====================================================
