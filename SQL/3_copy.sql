@@ -42,22 +42,22 @@
 -- \.
 --
 TABLE  Clubs 
-COPY Clubs (Name, Stadt, Stadion, Budget, Gründungsjahr) FROM stdin;
-FC Zürich                Zürich      Letzigrund                     NULL  1896
-FC St. Gallen            St. Gallen  AFG Arena                      NULL  1879
-FC Thun                  Thun        Arena Thun                     NULL  1898
-FC Vaduz                 Vaduz       Rheinpark Stadion              NULL  1932
-BSC Young Boys           Bern        Stade de Suisse                NULL  1898 
-FC Sion                  Sion        Stade Tourbillon               NULL  1909 
-FC Luzern                Luzern      Swissporarena                  NULL  1901 
-FC Lugano                Lugano      Stadio Comaredo                NULL  1908 
-Grasshopper Club Zürich  Zürich      Letzigrund                     NULL  1886
-FC Basel                 Basel       St. Jakob-Park                 NULL  1893 
-Neuchâtel Xamax FCS      Neuchâtel   Stade de la Maladière          NULL  1896
-Eintracht Frankfurt      Frankfurt   Commerzbank-Arena              NULL  1899
-Lazio Rom                Rom         Stadio Olimpico di Roma        NULL  1900   
-FSV Frankfurt            Frankfurt   Frankfurter Volksbank Stadion  NULL  1899 
-FC Winterthur            Winterthur  Schützenwiese                  NULL  1896 
+COPY Clubs (Name, Stadt, Stadion, Budget, Gründungsjahr) FROM stdin DELIMITER AS ',';
+'FC Zürich',                'Zürich',      'Letzigrund',                     NULL,  1896
+'FC St. Gallen',            'St. Gallen',  'AFG Arena',                      NULL,  1879
+'FC Thun',                  'Thun',        'Arena Thun',                     NULL,  1898
+'FC Vaduz',                 'Vaduz',       'Rheinpark Stadion',              NULL,  1932
+'BSC Young Boys',           'Bern',        'Stade de Suisse',                NULL,  1898 
+'FC Sion',                  'Sion',        'Stade Tourbillon',               NULL,  1909 
+'FC Luzern',                'Luzern',      'Swissporarena',                  NULL,  1901 
+'FC Lugano',                'Lugano',      'Stadio Comaredo',                NULL,  1908 
+'Grasshopper Club Zürich',  'Zürich',      'Letzigrund',                     NULL,  1886
+'FC Basel',                 'Basel',       'St. Jakob-Park',                 NULL,  1893 
+'Neuchâtel Xamax FCS',      'Neuchâtel',   'Stade de la Maladière',          NULL,  1896
+'Eintracht Frankfurt',      'Frankfurt',   'Commerzbank-Arena',              NULL,  1899
+'Lazio Rom',                'Rom',         'Stadio Olimpico di Roma',        NULL,  1900   
+'FSV Frankfurt',            'Frankfurt',   'Frankfurter Volksbank Stadion',  NULL,  1899 
+'FC Winterthur',            'Winterthur',  'Schützenwiese',                  NULL,  1896 
 \.
 --
 -- -- TABLE  PROJEKT
