@@ -7,62 +7,84 @@
 /*
  * Testdaten einfüllen
  */
--- TABLE  LIGEN
+-- TABLE  ligen
 
--- INSERT INTO abteilung VALUES (1, 'Verkauf');
--- INSERT INTO abteilung VALUES (2, 'Marketing');
--- INSERT INTO abteilung VALUES (3, 'Entwicklung');
--- INSERT INTO abteilung VALUES (4, 'Finanzen');
--- INSERT INTO abteilung VALUES (5, 'QS');
+INSERT INTO ligen (ligaid, name, preisgeld, saison) VALUES
+(1, 'Lega Nazionale Professionist Seria A', 1200000.0, 2016);
+INSERT INTO ligen (ligaid, name, preisgeld, saison) VALUES
+(2, 'Raiffeisen Super League', 1000000.0, 2016);
+INSERT INTO ligen (ligaid, name, preisgeld, saison) VALUES
+(3, 'Brack.ch Super League', 200000.0, 2016);
+INSERT INTO ligen (ligaid, name, preisgeld, saison) VALUES
+(4, 'Bundesliga', 5000000.0, 2016);
+INSERT INTO ligen (ligaid, name, preisgeld, saison) VALUES
+(5, '2. Bundesliga', 1000000.0, 2016);
+INSERT INTO ligen (ligaid, name, preisgeld, saison) VALUES
+(6, 'Axpo Super League', 800000.0, 2009);
+INSERT INTO ligen (ligaid, name, preisgeld, saison) VALUES
+(7, 'Bundesliga', 5000000.0, 2009);
  
--- TABLE  ANGESTELLTER
+-- TABLE  angestellten
 
--- INSERT INTO angestellter (persnr, name, tel, salaer, chef, abtnr, wohnort) VALUES
--- (1001, 'Marxer, Markus', 234, 10580.00, NULL, 1, 'Luzern');
--- INSERT INTO angestellter (persnr, name, tel, salaer, chef, abtnr, wohnort) VALUES
--- (1002, 'Widmer, Anna', 301, 12010.00, NULL, 2, 'Adligenswil');
--- INSERT INTO angestellter (persnr, name, tel, salaer, chef, abtnr, wohnort) VALUES
--- (1010, 'Steiner, Hans', 409, 10867.00, NULL, 3, 'Hitzkirch');
--- INSERT INTO angestellter (persnr, name, tel, salaer, chef, abtnr, wohnort) VALUES
--- (1019, 'Affolter, Vreni', 233, 4123.00, 1001, 1, 'Zürich');
--- INSERT INTO angestellter (persnr, name, tel, salaer, chef, abtnr, wohnort) VALUES
--- (1100, 'Widmer, Karl', 450, 7500.00, 1010, 3, 'Emmen');
--- INSERT INTO angestellter (persnr, name, tel, salaer, chef, abtnr, wohnort) VALUES
--- (1123, 'Meier, Franz', 240, 9765.00, 1001, 1, 'Zug');
--- INSERT INTO angestellter (persnr, name, tel, salaer, chef, abtnr, wohnort) VALUES
--- (2098, 'Zürcher, Hedi', 249, 10019.00, 1001, 1, 'Horw');
--- INSERT INTO angestellter (persnr, name, tel, salaer, chef, abtnr, wohnort) VALUES
--- (2109, 'Heiniger, Urs', 345, 4098.00, 1002, 2, 'Luzern');
--- INSERT INTO angestellter (persnr, name, tel, salaer, chef, abtnr, wohnort) VALUES
--- (2298, 'Pauli, Monika', 478, 5089.00, 1010, 3, 'Luzern');
--- INSERT INTO angestellter (persnr, name, tel, salaer, chef, abtnr, wohnort) VALUES
--- (2345, 'Becker, Fritz', 310, 6346.00, 1002, 2, 'Hochdorf');
--- INSERT INTO angestellter (persnr, name, tel, salaer, chef, abtnr, wohnort) VALUES
--- (2567, 'Ammann, Fritz', 467, 7890.00, 1010, 3, 'Baar');
--- INSERT INTO angestellter (persnr, name, tel, salaer, chef, abtnr, wohnort) VALUES
--- (2601, 'Wehrli, Anton', NULL, 5980.00, 2567, 3, 'Luzern');
--- INSERT INTO angestellter (persnr, name, tel, salaer, chef, abtnr, wohnort) VALUES
--- (2666, 'Beeler, Hans', NULL, 3780.00, 2567, 3, 'Rotkreuz');
--- INSERT INTO angestellter (persnr, name, tel, salaer, chef, abtnr, wohnort) VALUES
--- (2701, 'Graber, Berta', 451, 4590.00, 1100, 3, 'Sursee');
--- INSERT INTO angestellter (persnr, name, tel, salaer, chef, abtnr, wohnort) VALUES
--- (3000, 'Aarburg, Werner', 400, 9000.00, 1100, 3, 'Abtwil');
--- INSERT INTO angestellter (persnr, name, tel, salaer, chef, abtnr, wohnort) VALUES
--- (3019, 'Kern, Veronika', 401, 4800.00, 3000, 3, 'Sins');
--- INSERT INTO angestellter (persnr, name, tel, salaer, chef, abtnr, wohnort) VALUES
--- (3333, 'Wernli, Peter', 112, 8978.00, 1001, 1, 'Luzern');
--- INSERT INTO angestellter (persnr, name, tel, salaer, chef, abtnr, wohnort) VALUES
--- (3338, 'Kramer, Luise', NULL, 4000.00, 3000, 3, 'Luzern');
--- INSERT INTO angestellter (persnr, name, tel, salaer, chef, abtnr, wohnort) VALUES
--- (4000, 'Rey, Herbert', 480, 15000.00, NULL, 4, 'Adligenswil');
--- INSERT INTO angestellter (persnr, name, tel, salaer, chef, abtnr, wohnort) VALUES
--- (4010, 'Danuser, Vreni', 481, 5100.00, 4000, 4, 'Luzern');
--- INSERT INTO angestellter (persnr, name, tel, salaer, chef, abtnr, wohnort) VALUES
--- (2000, 'Schnell, Marie', 601, 5100.00, 4000, 4, 'Luzern');
--- INSERT INTO angestellter (persnr, name, tel, salaer, chef, abtnr, wohnort) VALUES
--- (2010, 'Gschwind, Fritz', 602, 5900.00, 4000, 4, 'Luzern');
--- INSERT INTO angestellter (persnr, name, tel, salaer, chef, abtnr, wohnort) VALUES
--- (2020, 'Test, Hans', 602, 5900.00, 4000, 4, 'Luzern');
+INSERT INTO angestellten (angid, vorname, nachname, gehalt, nummer, position, bereich) VALUES
+(1001, 'Sami', 'Hyypiä', NULL, NULL, NULL, 'Chef');
+INSERT INTO angestellten (angid, vorname, nachname, gehalt, nummer, position, bereich) VALUES
+(1002, 'Massimo', 'Rizzo', NULL, NULL, NULL, 'Assistent');
+INSERT INTO angestellten (angid, vorname, nachname, gehalt, nummer, position, bereich) VALUES
+(1003 'Christian', 'Bösch', NULL, NULL, NULL, 'Torhüter');
+INSERT INTO angestellten (angid, vorname, nachname, gehalt, nummer, position, bereich) VALUES
+(1004, 'Yanick', 'Brecher', NULL, 1, 'Tor', NULL);
+INSERT INTO angestellten (angid, vorname, nachname, gehalt, nummer, position, bereich) VALUES
+(1005, 'Anthony', 'Favre', NULL, 32, 'Tor', NULL);
+INSERT INTO angestellten (angid, vorname, nachname, gehalt, nummer, position, bereich) VALUES
+(1006, 'Novem', 'Baumann', NULL, 31, 'Tor', NULL);
+INSERT INTO angestellten (angid, vorname, nachname, gehalt, nummer, position, bereich) VALUES
+(1007, 'Armin', 'Alesevic', NULL, 19, 'Verteidigung', NULL);
+INSERT INTO angestellten (angid, vorname, nachname, gehalt, nummer, position, bereich) VALUES
+(1008, 'Vinicius', 'De Freitas Ribeiro', NULL, 28, 'Verteidigung', NULL);
+INSERT INTO angestellten (angid, vorname, nachname, gehalt, nummer, position, bereich) VALUES
+(1009, 'Leandro', 'Di Gregorio', NULL, 2, 'Verteidigung', NULL);
+INSERT INTO angestellten (angid, vorname, nachname, gehalt, nummer, position, bereich) VALUES
+(1010, 'Berat', 'Djimsiti', NULL, 5, 'Verteidigung', NULL);
+INSERT INTO angestellten (angid, vorname, nachname, gehalt, nummer, position, bereich) VALUES
+(1011, 'Ivan', 'Kecojevic', NULL, 25, 'Verteidigung', NULL);
+INSERT INTO angestellten (angid, vorname, nachname, gehalt, nummer, position, bereich) VALUES
+(1012, 'Mike', 'Kleiber', NULL, 21, 'Verteidigung', NULL);
+INSERT INTO angestellten (angid, vorname, nachname, gehalt, nummer, position, bereich) VALUES
+(1013, 'Philippe', 'Koch', NULL, 16, 'Verteidigung', NULL);
+INSERT INTO angestellten (angid, vorname, nachname, gehalt, nummer, position, bereich) VALUES
+(1014, 'Alain', 'Nef', NULL, 13, 'Verteidigung', NULL);
+INSERT INTO angestellten (angid, vorname, nachname, gehalt, nummer, position, bereich) VALUES
+(1015, 'Céderic', 'Brunner', NULL, 26, 'Mittelfeld', NULL);
+INSERT INTO angestellten (angid, vorname, nachname, gehalt, nummer, position, bereich) VALUES
+(1016, 'Kevin', 'Bua', NULL, 33, 'Mittelfeld', NULL);
+INSERT INTO angestellten (angid, vorname, nachname, gehalt, nummer, position, bereich) VALUES
+(1017, 'Oliver', 'Buff', NULL, 15, 'Mittelfeld', NULL);
+INSERT INTO angestellten (angid, vorname, nachname, gehalt, nummer, position, bereich) VALUES
+(1018, 'Davide', 'Chiumiento', NULL, 10, 'Mittelfeld', NULL);
+INSERT INTO angestellten (angid, vorname, nachname, gehalt, nummer, position, bereich) VALUES
+(1019, 'Anto', 'Grgic', NULL, 22, 'Mittelfeld', NULL);
+INSERT INTO angestellten (angid, vorname, nachname, gehalt, nummer, position, bereich) VALUES
+(1020, 'Burim', 'Kukeli', NULL, 20, 'Mittelfeld', NULL);
+INSERT INTO angestellten (angid, vorname, nachname, gehalt, nummer, position, bereich) VALUES
+(1021, 'Sangoné', 'Sarr', NULL, 33, 'Mittelfeld', NULL);
+INSERT INTO angestellten (angid, vorname, nachname, gehalt, nummer, position, bereich) VALUES
+(1022, 'Christrian', 'Schneuwly', NULL, 29, 'Mittelfeld', NULL);
+INSERT INTO angestellten (angid, vorname, nachname, gehalt, nummer, position, bereich) VALUES
+(1023, 'Marco', 'Schönbächler', NULL, 27, 'Mittelfeld', NULL);
+INSERT INTO angestellten (angid, vorname, nachname, gehalt, nummer, position, bereich) VALUES
+(1024, 'Artem', 'SimonyN', NULL, 23, 'Mittelfeld', NULL);
+INSERT INTO angestellten (angid, vorname, nachname, gehalt, nummer, position, bereich) VALUES
+(1025, 'Gilles', 'Yapi', NULL, 37, 'Mittelfeld', NULL);
+INSERT INTO angestellten (angid, vorname, nachname, gehalt, nummer, position, bereich) VALUES
+(1026, 'Amine', 'Chermiti', NULL, 9, 'Angriff', NULL);
+INSERT INTO angestellten (angid, vorname, nachname, gehalt, nummer, position, bereich) VALUES
+(1027, 'Franck', 'Etoundi', NULL, 14, 'Angriff', NULL);
+INSERT INTO angestellten (angid, vorname, nachname, gehalt, nummer, position, bereich) VALUES
+(1028, 'Mario', 'Gavranovic', NULL, 7, 'Angriff', NULL);
+INSERT INTO angestellten (angid, vorname, nachname, gehalt, nummer, position, bereich) VALUES
+(1029, 'Armando', 'Sadiku', NULL, 11, 'Angriff', NULL);
+
  
 -- TABLE  ABTLEITUNG (ABTCHEF, ABTNR)
 

@@ -9,74 +9,74 @@ CREATE TYPE POSITIONEN AS ENUM ('Tor', 'Verteidigung', 'Mittelfeld', 'Angriff');
  * Tabellen erzeugen
  */
 
-CREATE TABLE Ligen (
-  LigaId INTEGER  PRIMARY KEY,
-  Name VARCHAR(20) NOT NULL,
-  Preisgeld DECIMAL(15, 6) DEFAULT 0,
-  Saison SERIAL NOT NULL
+CREATE TABLE ligen (
+  ligaid integer  PRIMARY KEY,
+  name text NOT NULL,
+  preisgeld decimal(15, 6) DEFAULT 0,
+  saison serial NOT NULL
 );
 
-CREATE TABLE Clubs (
-  ClubId INTEGER  PRIMARY KEY,
-  Name VARCHAR(20) NOT NULL,
-  Stadt VARCHAR(20) NOT NULL,
-  Stadion VARCHAR(20) NOT NULL,
-  Budget DECIMAL (15,6) DEFAULT 0,
-  Gründungsjahr SERIAL NOT NULL
+CREATE TABLE clubs (
+  clubid integer  PRIMARY KEY,
+  name text NOT NULL,
+  stadt text NOT NULL,
+  stadion text NOT NULL,
+  budget decimal (15,6) DEFAULT 0,
+  gründungsjahr serial NOT NULL
 );
 
-CREATE TABLE Clubverteilungen (
-  Club INTEGER NOT NULL,
-  Liga INTEGER  NOT NULL,
-  PRIMARY KEY(Club, Liga)
+CREATE TABLE clubverteilungen (
+  club integer NOT NULL,
+  liga integer  NOT NULL,
+  PRIMARY KEY(club, liga)
 );
 
-CREATE TABLE Angestellten (
-  AngId INTEGER PRIMARY KEY,
-  Vorname VARCHAR(20) NOT NULL,
-  Nachname VARCHAR(20) NOT NULL,
-  Gehalt DECIMAL (15,6) NOT NULL,
-  Nummer INTEGER,
-  Position POSITIONEN,
-  Bereich BEREICHE
+CREATE TABLE angestellten (
+  angid integer PRIMARY KEY,
+  vorname text NOT NULL,
+  nachname text NOT NULL,
+  gehalt decimal (15,6) NOT NULL,
+  nummer integer,
+  position positionen,
+  bereich bereiche
 );
 
-CREATE TABLE Anstellungen (
-  AngId INTEGER NOT NULL,
-  Club INTEGER NOT NULL,
-  PRIMARY KEY(AngId, Club)
+CREATE TABLE anstellungen (
+  angid integer NOT NULL,
+  club integer NOT NULL,
+  PRIMARY KEY(angid, club)
 );
 
-CREATE TABLE Transfers (
-  TransferId INTEGER PRIMARY KEY,
-  Käufer INTEGER NOT NULL,
-  Verkäufer INTEGER,
-  Angestellter INTEGER NOT NULL,
-  Vertragsbeginn DATE NOT NULL,
-  Vertragsende DATE NOT NULL,
-  Summe DECIMAL(15,6)
+CREATE TABLE transfers (
+  transferid integer PRIMARY KEY,
+  käufer integer NOT NULL,
+  verkäufer integer,
+  angestellter integer NOT NULL,
+  vertragsbeginn date NOT NULL,
+  vertragsende date NOT NULL,
+  summe decimal(15,6)
 );
 
-CREATE TABLE Begegnungnen (
-  BegegnungsId INTEGER  PRIMARY KEY,
-  Heim INTEGER NOT NULL,
-  Gast INTEGER  NOT NULL,
-  Spieldatum DATE NOT NULL,
-  Austragungsort VARCHAR(20) NOT NULL,
-  Gewinner INTEGER NOT NULL,
-  ToreHeim INTEGER NOT NULL,
-  ToreGast INTEGER NOT NULL
+CREATE TABLE begegnungnen (
+  begegnungsid integer  PRIMARY KEY,
+  heim integer NOT NULL,
+  gast integer  NOT NULL,
+  spieldatum date NOT NULL,
+  austragungsort text NOT NULL,
+  gewinner integer NOT NULL,
+  toreHeim integer NOT NULL,
+  toreGast integer NOT NULL
 );
 
-CREATE TABLE Zuschauer (
-  ZuschauerId INTEGER  PRIMARY KEY,
-  Vorname VARCHAR(20) NOT NULL,
-  Nachname VARCHAR(20) NOT NULL,
-  Lieblingsverein INTEGER
+CREATE TABLE zuschauer (
+  zuschauerid integer  PRIMARY KEY,
+  vorname text NOT NULL,
+  nachname text NOT NULL,
+  lieblingsverein integer
 );
 
-CREATE TABLE Zuschauerverteilungen (
-  Spiel INTEGER NOT NULL,
-  Besucher INTEGER NOT NULL,
-  PRIMARY KEY (Spiel, Besucher)
+CREATE TABLE zuschauerverteilungen (
+  spiel integer NOT NULL,
+  besucher integer NOT NULL,
+  PRIMARY KEY (spiel, besucher)
 );
