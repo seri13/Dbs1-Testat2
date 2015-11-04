@@ -3,38 +3,38 @@
  * TODO: -ON DELETE CASCADE?
  *       -Additional Constraints?
  */
- ALTER TABLE Transfers
+ ALTER TABLE transfers
  ADD CONSTRAINT fk_tBuyer
- FOREIGN KEY (Käufer) REFERENCES Clubs (ClubId);
+ FOREIGN KEY (käufer) REFERENCES clubs (clubId);
 
- ALTER TABLE Transfers
+ ALTER TABLE transfers
  ADD CONSTRAINT fk_tSeller
- FOREIGN KEY (Verkäufer) REFERENCES Clubs (ClubId);
+ FOREIGN KEY (verkäufer) REFERENCES clubs (clubId);
 
- ALTER TABLE Transfers
+ ALTER TABLE transfers
  ADD CONSTRAINT fk_tEmployee
- FOREIGN KEY (Angestellter) REFERENCES Angestellten (AngId);
+ FOREIGN KEY (angestellter) REFERENCES angestellten (angId);
 
- ALTER TABLE Begegnungnen
+ ALTER TABLE begegnungnen
  ADD CONSTRAINT fk_gmHome
- FOREIGN KEY (Heim) REFERENCES Clubs (ClubId);
+ FOREIGN KEY (heim) REFERENCES clubs (clubId);
 
- ALTER TABLE Begegnungnen
+ ALTER TABLE begegnungnen
  ADD CONSTRAINT fk_gmAway
- FOREIGN KEY (Gast) REFERENCES Clubs (ClubId);
+ FOREIGN KEY (gast) REFERENCES clubs (clubId);
 
- ALTER TABLE Begegnungnen
+ ALTER TABLE begegnungnen
  ADD CONSTRAINT fk_gmWinner
- FOREIGN KEY (Gewinner) REFERENCES Clubs (ClubId);
+ FOREIGN KEY (gewinner) REFERENCES clubs (clubId);
 
- ALTER TABLE Zuschauer
+ ALTER TABLE zuschauer
  ADD CONSTRAINT fk_vFavClub
- FOREIGN KEY (Lieblingsverein) REFERENCES Clubs (ClubId) ON DELETE CASCADE;
+ FOREIGN KEY (lieblingsverein) REFERENCES clubs (clubId) ON DELETE CASCADE;
 
- ALTER TABLE Zuschauerverteilungen
+ ALTER TABLE zuschauerverteilungen
  ADD CONSTRAINT fk_vdGame
- FOREIGN KEY (Spiel) REFERENCES Begegnungnen (BegegnungsId);
+ FOREIGN KEY (spiel) REFERENCES begegnungnen (begegnungsId);
 
- ALTER TABLE Zuschauerverteilungen
+ ALTER TABLE zuschauerverteilungen
  ADD CONSTRAINT fk_vdVisitor
- FOREIGN KEY (Besucher) REFERENCES Zuschauer (ZuschauerId);
+ FOREIGN KEY (besucher) REFERENCES zuschauer (zuschauerId);

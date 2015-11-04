@@ -1,7 +1,5 @@
 /*
  * !! TODO !!
- * I commented all the stuff to test the other scripts.
- * The INSERTS aren't really that helpful anyway...
  */
  
 /*
@@ -15,40 +13,40 @@
 -- INSERT INTO abteilung VALUES (4, 'Finanzen');
 -- INSERT INTO abteilung VALUES (5, 'QS');
  
--- TABLE  Clubs
+-- TABLE  clubs
 
-INSERT INTO Clubs (ClubId, Name, Stadt, Stadion, Budget, Gründungsjahr) VALUES
+INSERT INTO clubs (clubId, Name, stadt, stadion, budget, gründungsjahr) VALUES
 (1, 'FC Zürich', 'Zürich', 'Letzigrund', NULL, 1896);
-INSERT INTO Clubs (ClubId, Name, Stadt, Stadion, Budget, Gründungsjahr) VALUES
+INSERT INTO clubs (clubId, Name, stadt, stadion, budget, gründungsjahr) VALUES
 (2, 'FC St. Gallen', 'St. Gallen', 'AFG Arena', NULL, 1879);
-INSERT INTO Clubs (ClubId, Name, Stadt, Stadion, Budget, Gründungsjahr) VALUES
+INSERT INTO clubs (clubId, Name, stadt, stadion, budget, gründungsjahr) VALUES
 (3, 'FC Thun', 'Thun', 'Arena Thun', NULL, 1898);
-INSERT INTO Clubs (ClubId, Name, Stadt, Stadion, Budget, Gründungsjahr) VALUES
-(4, 'FC Vaduz', 'Vaduz', 'Rheinpark Stadion', NULL, 1932);
-INSERT INTO Clubs (ClubId, Name, Stadt, Stadion, Budget, Gründungsjahr) VALUES
+INSERT INTO clubs (clubId, Name, stadt, stadion, budget, gründungsjahr) VALUES
+(4, 'FC Vaduz', 'Vaduz', 'Rheinpark stadion', NULL, 1932);
+INSERT INTO clubs (clubId, Name, stadt, stadion, budget, gründungsjahr) VALUES
 (5, 'BSC Young Boys', 'Bern', 'Stade de Suisse', NULL, 1898);
-INSERT INTO Clubs (ClubId, Name, Stadt, Stadion, Budget, Gründungsjahr) VALUES
+INSERT INTO clubs (clubId, Name, stadt, stadion, budget, gründungsjahr) VALUES
 (6, 'FC Sion', 'Sion', 'Stade Tourbillon', NULL, 1909);
-INSERT INTO Clubs (ClubId, Name, Stadt, Stadion, Budget, Gründungsjahr) VALUES
+INSERT INTO clubs (clubId, Name, stadt, stadion, budget, gründungsjahr) VALUES
 (7, 'FC Luzern', 'Luzern', 'Swissporarena', NULL, 1901);
-INSERT INTO Clubs (ClubId, Name, Stadt, Stadion, Budget, Gründungsjahr) VALUES
+INSERT INTO clubs (clubId, Name, stadt, stadion, budget, gründungsjahr) VALUES
 (8, 'FC Lugano', 'Lugano', 'Stadio Comaredo', NULL, 1908);
-INSERT INTO Clubs (ClubId, Name, Stadt, Stadion, Budget, Gründungsjahr) VALUES
+INSERT INTO clubs (clubId, Name, stadt, stadion, budget, gründungsjahr) VALUES
 (9, 'Grasshopper Club Zürich', 'Zürich', 'Letzigrund', NULL, 1886);
-INSERT INTO Clubs (ClubId, Name, Stadt, Stadion, Budget, Gründungsjahr) VALUES
+INSERT INTO clubs (clubId, Name, stadt, stadion, budget, gründungsjahr) VALUES
 (10, 'FC Basel', 'Basel', 'St. Jakob-Park', NULL, 1893);
-INSERT INTO Clubs (ClubId, Name, Stadt, Stadion, Budget, Gründungsjahr) VALUES
+INSERT INTO clubs (clubId, Name, stadt, stadion, budget, gründungsjahr) VALUES
 (11, 'Neuchâtel Xamax FCS', 'Neuchâtel', 'Stade de la Maladière', NULL, 1896);
-INSERT INTO Clubs (ClubId, Name, Stadt, Stadion, Budget, Gründungsjahr) VALUES
+INSERT INTO clubs (clubId, Name, stadt, stadion, budget, gründungsjahr) VALUES
 (12, 'Eintracht Frankfurt', 'Frankfurt', 'Commerzbank-Arena', NULL, 1899);
-INSERT INTO Clubs (ClubId, Name, Stadt, Stadion, Budget, Gründungsjahr) VALUES
+INSERT INTO clubs (clubId, Name, stadt, stadion, budget, gründungsjahr) VALUES
 (13, 'Lazio Rom', 'Rom', 'Stadio Olimpico di Roma', NULL, 1900);
-INSERT INTO Clubs (ClubId, Name, Stadt, Stadion, Budget, Gründungsjahr) VALUES
+INSERT INTO clubs (clubId, Name, stadt, stadion, budget, gründungsjahr) VALUES
 (14, 'FSV Frankfurt', 'Frankfurt', 'Frankfurter Volksbank Stadion', NULL, 1899);
-INSERT INTO Clubs (ClubId, Name, Stadt, Stadion, Budget, Gründungsjahr) VALUES
+INSERT INTO clubs (clubId, Name, stadt, stadion, budget, gründungsjahr) VALUES
 (15, 'FC Winterthur', 'Winterthur', 'Schützenwiese', NULL, 1896);
 
--- TABLE  ABTLEITUNG (ABTBudget, Gründungsjahr)
+-- TABLE  ABTLEITUNG (ABTbudget, gründungsjahr)
 
 -- INSERT INTO abtleitung VALUES (1, 1001);
 -- INSERT INTO abtleitung VALUES (2, 1002);
