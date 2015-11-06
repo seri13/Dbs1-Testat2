@@ -86,8 +86,41 @@ INSERT INTO angestellten (angid, vorname, nachname, gehalt, nummer, position, be
 (1029, 'Armando', 'Sadiku', NULL, 11, 'Angriff', NULL);
 
  
--- TABLE  ABTLEITUNG (ABTCHEF, ABTNR)
-
+-- TABLE  begegnungen
+INSERT INTO abegegnungen (begegnungsid, heim, gast, spieldatum, austragungsort, toreheim, toregast) VALUES
+(1, 'Fc Luzern', 'Fc Sion', 18.07.2015, 'Swissporarena', 2, 2);
+(2, 'Fc Zürich', 'BSC Young Boys', 18.07.2015, 'Letzigrund', 1, 1);
+(3, 'Fc Basel', 'Fc Vaduz', 19.07.2015, 'St. Jakob-Park', 2, 0);
+(4, 'Fc Thun', 'Grasshopper Club Zürich', 19.07.2015, 'Arenaa Thun', 3, 5);
+(5, 'Fc St Gallen', 'Fc Lugano', 19.07.2015, 'AFG Arena', 2, 0);
+(6, 'BSC Young Boys', 'Fc Luzern', 25.07.2015, 'Stade de Suisse', 1, 1);
+(7, 'Grasshopper Club Zürich', 'Fc Basel', 25.07.2015, 'Letzigrund', 2, 3);
+(8, 'Fc Lugano', 'Fc Thun', 26.07.2015, 'Stadio Comaredo', 2, 3);
+(9, 'Fc Sion', 'Fc St Gallen', 26.07.2015, 'Stade Tourbillon', 1, 0);
+(10, 'Fc Vaduz', 'Fc Zürich', 26.07.2015, 'Rheinpark Stadion', 2, 2);
+(11, 'Fc Basel', 'Fc Sion', 01.08.2015, 'St. Jakob-Park', 3, 0);
+(12, 'Fc St Gallen', 'BSC Young Boys', 01.08.2015, 'AFG Arena', 1, 1);
+(13, 'Fc Thun', 'Fc Luzern', 02.08.2015, 'Arena Thun', 0, 1);
+(14, 'Fc Lugano', 'Fc Vaduz', 02.08.2015, 'Stadio Comaredo', 1, 0);
+(15, 'Fc Zürich', 'Grasshopper Club Zürich', 02.08.2015, 'Letzigrund', 2, 3);
+(16, 'Grasshopper Club Zürich', 'Fc Lugano', 08.08.2015, 'Letzigrund', 1, 3);
+(17, 'Fc Luzern', 'Fc Basek', 08.08.2015, 'Swissporarena', 2, 2);
+(18, 'Fc Vaduz', 'Fc Sion', 09.08.2015, 'Rheinpark Stadion', 1, 1);
+(19, 'Fc St Gallen', 'Fc Zürich', 09.08.2015, 'AFG Arena', 0, 2);
+(20, 'BSC Young Boys', 'Fc Thun', 09.08.2015, 'Stade de Suisse', 3, 1);
+(21, 'Fc Basel', 'Fc Thun', 12.08.2015, 'St. Jakob-Park', 3, 1);
+(22, 'BSC Young Boys', 'Fc Lugano', 12.08.2015, 'Stade de Suisse', 0, 1);
+(23, 'Fc Luzern', 'Fc St. Gallen', 12.08.2015, 'Swissporarena', 0, 1);
+(24, 'Fc Vaduz', 'Grasshopper Club Zürich', 13.08.2015, 'Rheinpark Stadion', 3, 3);
+(25, 'Fc Sion', 'Fc Zürich', 13.08.2015, 'Stade Tourbillon', 3, 1);
+(26, 'Fc Lugano', 'Fc Basel', 29.08.2015, 'Stadio Comaredo', 1, 3);
+(27, 'Fc Zürich', 'Fc Luzern', 29.08.2015, 'Letzigrund', 2, 5);
+(12, 'Fc St Gallen', 'BSC Young Boys', 01.08.2015, 'AFG Arena', 1, 1);
+(1, 'Fc Zürich', 'Fc Vaduz', 07.11.2015, 'Letzigrund', NULL, NULL);
+(2, 'Fc Lugano', 'BSC Young Boys', 07.11.2015, 'Stadio Comaredo', NULL, NULL);
+(3, 'Fc Thun', 'Fc St. Gallen', 08.11.2015, 'Arena Thun', NULL, NULL);
+(4, 'Fc Sion', 'Fc Luzern', 08.11.2015, 'Stade Tourbillon', NULL, NULL);
+(5, 'Fc Basel', 'Grasshopper Club Zürich', 08.11.2015, 'St. Jakob-Park', NULL, NULL);
 -- INSERT INTO abtleitung VALUES (1, 1001);
 -- INSERT INTO abtleitung VALUES (2, 1002);
 -- INSERT INTO abtleitung VALUES -- (3, 1010);

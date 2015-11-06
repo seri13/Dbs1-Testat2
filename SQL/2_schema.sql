@@ -64,8 +64,8 @@ CREATE TABLE begegnungnen (
   spieldatum date NOT NULL,
   austragungsort text NOT NULL,
   gewinner integer NOT NULL,
-  toreHeim integer NOT NULL,
-  toreGast integer NOT NULL
+  toreheim integer NOT NULL,
+  toregast integer NOT NULL
 );
 
 CREATE TABLE zuschauer (
