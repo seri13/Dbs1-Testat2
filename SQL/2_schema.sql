@@ -63,13 +63,12 @@ CREATE TABLE begegnungnen (
   gast integer  NOT NULL,
   spieldatum date NOT NULL,
   austragungsort text NOT NULL,
-  gewinner integer NOT NULL,
   toreHeim integer NOT NULL,
   toreGast integer NOT NULL
 );
 
 CREATE TABLE zuschauer (
-  zuschauerId integer  PRIMARY KEY,
+  zuschauerid integer PRIMARY KEY,
   vorname text NOT NULL,
   nachname text NOT NULL,
   lieblingsverein integer
