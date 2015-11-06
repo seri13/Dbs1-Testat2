@@ -61,15 +61,16 @@ h3 {
     Position TEXT, <br>
     Bereich TEXT) </p>
 <hr>
-<p>Anstellungen(<fk><pk>AngId</pk></fk> REFERENCES Angestellten, <br>
-    <fk><pk>Club</pk></fk> REFERENCES Clubs(ClubId)) </p>
+<p>Anstellungen(<pk>AnstellungsId</pk>, <br>
+    <fk>AngId</fk> REFERENCES Angestellten, <br>
+    <fk>Club</fk> REFERENCES Clubs(ClubId)), <br>
+    Vertragsbeginn DATE NOT NULL, <br>
+    Vertragsende DATE NOT NULL) </p>
 <hr>
 <p>Transfers(<pk>TransferId</pk> INT, <br>
     <fk>Käufer</fk> REFERENCES Clubs(ClubId), <br>
     <fk>Verkäufer</fk> REFERENCES Clubs(ClubId), <br>
-    <fk>Angestellter</fk> REFERENCES Angestellten(AngId), <br>
-    Vertragsbeginn DATE NOT NULL, <br>
-    Vertragsende DATE NOT NULL, <br>
+    <fk>Transferierter</fk> REFERENCES Angestellten(AngId), <br>
     Summe DOUBLE NOT NULL)</p>
 <hr>
 <p>Begegnungen(<pk>BegenungsId</pk> INT, <br>
