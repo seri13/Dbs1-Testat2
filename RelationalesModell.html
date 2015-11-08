@@ -50,8 +50,10 @@ h3 {
     Budget DOUBLE NOT NULL, <br>
     Gründungsjahr INT NOT NULL)</p>
 <hr>
-<p>Clubverteilungen(<fk><pk>Club</pk></fk> REFERENCES Clubs(ClubId), <br>
-    <pk><fk>Liga</fk></pk> REFERENCES Ligen(LigaId))</p>
+<p>Clubverteilungen(<pk>ClubVerteilungsId</pk> INT, <br>
+	  <fk>Club</fk> REFERENCES Clubs(ClubId), <br>
+    <fk>Liga</fk> REFERENCES Ligen(LigaId), <br>
+		Position INT NOT NULL)</p>
 <hr>
 <p>Angestellten(<pk>AngId</pk> INT, <br>
     Vorname TEXT NOT NULL, <br>
@@ -71,7 +73,10 @@ h3 {
     <fk>Käufer</fk> REFERENCES Clubs(ClubId), <br>
     <fk>Verkäufer</fk> REFERENCES Clubs(ClubId), <br>
     <fk>Transferierter</fk> REFERENCES Angestellten(AngId), <br>
-    Summe DOUBLE NOT NULL)</p>
+    Summe DOUBLE NOT NULL, <br>
+		altePosition ENUM, <br>
+		alteNummer INT, <br>
+		alterBereich ENUM)</p>
 <hr>
 <p>Begegnungen(<pk>BegenungsId</pk> INT, <br>
     <fk>Heim</fk> REFERENCES Clubs(ClubId), <br>
@@ -86,8 +91,9 @@ h3 {
     Nachname TEXT, <br>
     <fk>Lieblingsverein</fk> REFERENCES Clubs(ClubId))</p>
 <hr>
-<p>Zuschauerverteilungen(<fk><pk>Spiel</pk></fk> REFERENCES Begegnungen(BegegnungsId), <br>
-    <fk><pk>Zuschauer</pk></fk> RERFERENCES Zuschauer(ZuschauerId)) </p>
+<p>Zuschauerverteilungen(<pk>ZuschauerVerteilungsId</pk> INT, <br>
+    <fk>Spiel</fk> REFERENCES Begegnungen(BegegnungsId), <br>
+    <fk>Zuschauer</fk> RERFERENCES Zuschauer(ZuschauerId)) </p>
 
 <hr>
 </body>

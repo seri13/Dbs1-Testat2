@@ -34,7 +34,12 @@ INSERT INTO clubs (clubId, Name, stadt, stadion, budget, gründungsjahr) VALUES
 INSERT INTO clubs (clubId, Name, stadt, stadion, budget, gründungsjahr) VALUES
 (15, 'FC Winterthur', 'Winterthur', 'Schützenwiese', NULL, 1896),
 (16, 'Hamburger SV', 'Hamburg', 'Volksparkstadion', NULL, 1887),
-(17, 'Borussia Mönchengladbach', 'Mönchengladbach', 'Sportanlage Am Haus Lütz', NULL, 1900);
+(17, 'Borussia Mönchengladbach', 'Mönchengladbach', 'Sportanlage Am Haus Lütz', NULL, 1900),
+(18, 'Torino F.C.', 'Torino', 'Stadio Olimpico Torion', NULL, 1906),
+(19, 'Vfl Wolfsburg II', 'Wolfsburg', 'AOK Stadion', NULL, 1945),
+(20, 'FC Wohlen', 'Wohlen', 'Niedermatten', NULL, 1904),
+(21, 'FC Wil', 'Wil', 'IGP Arena', NULL, 1900),
+(22, 'FC Lugano', 'Lugano', 'Stadio di Cornaredo', NULL, 1908);
 
 -- TABLE ligen
 
@@ -52,6 +57,8 @@ INSERT INTO ligen (ligaid, name, preisgeld, saison) VALUES
 (6, 'Axpo Super League', 800000.0, 2009);
 INSERT INTO ligen (ligaid, name, preisgeld, saison) VALUES
 (7, 'Bundesliga', 5000000.0, 2009);
+
+(8, 'Fussball-Regionalliga Nord', 5000.0, 2016);
 
 -- Table clubverteilungen
 INSERT INTO clubverteilungen (clubLigaid, club, liga) VALUES
@@ -75,7 +82,15 @@ INSERT INTO clubverteilungen (clubLigaid, club, liga) VALUES
 (18, 5, 6),
 (19, 6, 6),
 (20, 7, 6),
-(21, 11, 6);
+(21, 11, 6),
+(22, 15, 3),
+(23, 16, 4),
+(24, 17, 4),
+(25, 18, 1),
+(26, 19, 8),
+(27, 20, 3),
+(28, 21, 3),
+(29, 22, 2);
 
 -- TABLE  angestellten
 INSERT INTO angestellten (angid, vorname, nachname, gehalt, nummer, position, bereich) VALUES
@@ -137,6 +152,12 @@ INSERT INTO angestellten (angid, vorname, nachname, gehalt, nummer, position, be
 INSERT INTO angestellten (angid, vorname, nachname, gehalt, nummer, position, bereich) VALUES
 (1029, 'Armando', 'Sadiku', NULL, 11, 'Angriff', NULL);
 
+(1030, 'Axel', 'Borgmann', NULL, 21, 'Verteidigung', NULL),
+(1031, 'Migjen', 'Basha', NULL, 11, 'Mittelfeld', NULL),
+(1032, 'Naser', 'Aliji', NULL, 27, 'Verteidigung', NULL),
+(1033, 'Albion', 'Avdijaj', NULL, 7, 'Angriff', NULL),
+(1034, 'Mergim', 'Brahimi', NULL, 11, 'Mittelfeld', NULL),
+(1035, 'Sandro', 'Lombardi', NULL, 12, 'Mittelfeld', NULL);
 -- TABLE  Zuschauer
 -- See script in README.md
 INSERT INTO zuschauer (zuschauerId, vorname, nachname, lieblingsverein) VALUES
@@ -776,3 +797,18 @@ INSERT INTO abegegnungen (begegnungsid, heim, gast, spieldatum, austragungsort, 
 (3, 'Fc Thun', 'Fc St. Gallen', 08.11.2015, 'Arena Thun', NULL, NULL);
 (4, 'Fc Sion', 'Fc Luzern', 08.11.2015, 'Stade Tourbillon', NULL, NULL);
 (5, 'Fc Basel', 'Grasshopper Club Zürich', 08.11.2015, 'St. Jakob-Park', NULL, NULL);
+
+-- TABLE zuschauerverteilungen
+-- http://jsfiddle.net/LKS90/wryu1fdL/
+
+-- TABLE Anstellungen
+
+-- TABLE Transfers
+INSERT INTO transfers (transferId, käufer, verkäufer, transferierter, altePosition, alteNummer, alterBereich, summe) VALUES
+(1, 4, NULL, 1030, NULL, NULL, NULL, 0),
+(2, 1, 13, 1008, 'Verteidigung', NULL, NULL, 200000.0),
+(3, 7, 18, 1031, 'Mittelfeld', 4, NULL, 0),
+(4, 10, 4, 1032, 'Verteidigung', NULL, NULL, 0),
+(5, 4, 19, 1033, 'Angriff', 12, NULL, NULL),
+(6, 9, 20, 1034, 'Mittelfeld', 10, NULL, NULL),
+(7, 21, 22, 1035, 'Mittelfeld', 66, NULL, NULL),

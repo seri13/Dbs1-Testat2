@@ -42,18 +42,21 @@ CREATE TABLE angestellten (
 );
 
 CREATE TABLE anstellungen (
+  anstellungsId integer PRIMARY KEY,
   angId integer NOT NULL,
   club integer NOT NULL,
-  PRIMARY KEY(angId, club)
+  vertragsbeginn date NOT NULL,
+  vertragsende date NOT NULL
 );
 
 CREATE TABLE transfers (
   transferId integer PRIMARY KEY,
   käufer integer NOT NULL,
   verkäufer integer,
-  angestellter integer NOT NULL,
-  vertragsbeginn date NOT NULL,
-  vertragsende date NOT NULL,
+  transferierter integer NOT NULL,
+  altePosition positionen,
+  alteNummer integer,
+  alterBereich bereiche,
   summe decimal(15,6)
 );
 
@@ -75,7 +78,7 @@ CREATE TABLE zuschauer (
 );
 
 CREATE TABLE zuschauerverteilungen (
+  zuschauerVerteilungsId integer PRIMARY KEY,
   spiel integer NOT NULL,
-  besucher integer NOT NULL,
-  PRIMARY KEY (spiel, besucher)
+  besucher integer NOT NULL
 );
