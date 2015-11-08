@@ -42,13 +42,13 @@ CREATE TABLE angestellten (
 );
 
 CREATE TABLE anstellungen (
+  anstellungsid integer PRIMARY KEY;
   angId integer NOT NULL,
   club integer NOT NULL,
-  PRIMARY KEY(angId, club)
 );
 
 CREATE TABLE transfers (
-  transferId integer PRIMARY KEY,
+  transferid integer PRIMARY KEY,
   käufer integer NOT NULL,
   verkäufer integer,
   angestellter integer NOT NULL,
