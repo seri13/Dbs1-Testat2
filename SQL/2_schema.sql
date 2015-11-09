@@ -50,7 +50,7 @@ CREATE TABLE anstellungen (
 );
 
 CREATE TABLE transfers (
-  transferid integer PRIMARY KEY,
+  transferId integer PRIMARY KEY,
   käufer integer NOT NULL,
   verkäufer integer,
   transferierter integer NOT NULL,
