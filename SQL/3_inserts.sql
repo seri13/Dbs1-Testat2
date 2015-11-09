@@ -3,6 +3,7 @@
  */
 -- TABLE  clubs
 
+<<<<<<< Updated upstream
 INSERT INTO clubs (clubId, name, stadt, stadion, marktwert, gründungsjahr) VALUES
 (1, 'FC Zürich', 'Zürich', 'Letzigrund', NULL, 1896),
 (2, 'FC St. Gallen', 'St. Gallen', 'AFG Arena', NULL, 1879),
@@ -26,6 +27,24 @@ INSERT INTO clubs (clubId, name, stadt, stadion, marktwert, gründungsjahr) VALU
 (20, 'FC Wohlen', 'Wohlen', 'Niedermatten', NULL, 1904),
 (21, 'FC Wil', 'Wil', 'IGP Arena', NULL, 1900),
 (22, 'FC Lugano', 'Lugano', 'Stadio di Cornaredo', NULL, 1908);
+=======
+INSERT INTO clubs (clubid, name, stadt, stadion, budget, gründungsjahr) VALUES
+(1, 'FC Zürich', 'Zürich', 'Letzigrund', NULL, 1896);
+(2, 'FC St. Gallen', 'St. Gallen', 'AFG Arena', NULL, 1879);
+(3, 'FC Thun', 'Thun', 'Arena Thun', NULL, 1898);
+(4, 'FC Vaduz', 'Vaduz', 'Rheinpark stadion', NULL, 1932);
+(5, 'BSC Young Boys', 'Bern', 'Stade de Suisse', NULL, 1898);
+(6, 'FC Sion', 'Sion', 'Stade Tourbillon', NULL, 1909);
+(7, 'FC Luzern', 'Luzern', 'Swissporarena', NULL, 1901);
+(8, 'FC Lugano', 'Lugano', 'Stadio Comaredo', NULL, 1908);
+(9, 'Grasshopper Club Zürich', 'Zürich', 'Letzigrund', NULL, 1886);
+(10, 'FC Basel', 'Basel', 'St. Jakob-Park', NULL, 1893);
+(11, 'Neuchâtel Xamax FCS', 'Neuchâtel', 'Stade de la Maladière', NULL, 1896);
+(12, 'Eintracht Frankfurt', 'Frankfurt', 'Commerzbank-Arena', NULL, 1899);
+(13, 'Lazio Rom', 'Rom', 'Stadio Olimpico di Roma', NULL, 1900);
+(14, 'FSV Frankfurt', 'Frankfurt', 'Frankfurter Volksbank Stadion', NULL, 1899);
+(15, 'FC Winterthur', 'Winterthur', 'Schützenwiese', NULL, 1896);
+>>>>>>> Stashed changes
 
 -- TABLE ligen
 

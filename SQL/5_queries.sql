@@ -1,8 +1,16 @@
 /*
  * !! TODO !!
  */
-
-
+--unkorreliert
+SELECT clubs.name, markwert
+FROM clubs INNER JOIN ligen 
+ON ligen.ligaid=clubs.ligaid 
+WHERE ligen.name='Raiffeisen Super League'
+AND markwert =
+	( SELECT MIN (markwert)
+	FROM clubs INNER JOIN ligen 
+	ON ligen.ligaid=club.ligaid WHERE liga.name='Raiffeisen Super League'
+);
 -- select name,  from angestellter where salaer > 5000;
 --
 -- select name, salaer from angestellter where wohnort = 'Luzern' AND (salaer < 5000 OR salaer > 8000);
@@ -31,6 +39,26 @@ Select Distinct positon, vorname, nachname from angestellten WHERE club=1 ORDER 
 --       )
 --   );
 --
+SELECT ang.name, ang.gehalt
+FROM angestellten ang INNER JOIN clubs club
+ON ang.clubid=club.clubid
+WHERE club.name='Fc Zürich'
+AND ang.gehalt > ALL
+	( SELECT gehalt
+		FROM angestellten ang1 INNER JOIN clubs club1
+		ON ang1.clubid=club1.clubid
+		WHERE club1.name='Fc Basel'
+);
+
+SELECT position, clubid, COUNT(*) AS "angestellten" FROM angestellten
+GROUP BY position, clubid;
+
+
+SELECT A.nachname, P.name, PZ.preisgeld
+FROM ligen AS PZ, clubs AS P, angestellten AS A
+WHERE P.ProjLeiter = PZ.PersNr
+AND A.PersNr = PZ.PersNr
+AND PZ.preisgeld > 1000000;
 -- select AbtNr, avg(Salaer), count(*)
 -- from Angestellter
 -- group by AbtNr
