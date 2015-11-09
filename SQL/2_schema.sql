@@ -35,7 +35,7 @@ CREATE TABLE angestellten (
   angId integer PRIMARY KEY,
   vorname text NOT NULL,
   nachname text NOT NULL,
-  gehalt decimal (15,6),
+  marktwert decimal (15,6),
   nummer integer,
   position positionen,
   bereich bereiche
